@@ -13,7 +13,16 @@
 <body onload="cargarDOM()">
 	
 	<div id="div1">
-		<p></p>
+		<form name="myForm" action="js/arbol_DOM.js" onsubmit="return validateForm()" method="post">
+			Nombre: <input type="text" name="fName"> <br>
+			Apellidos: <input type="text" name="fSurname"> <br>
+			DNI: <input type="text" name="fDni"> <br>
+			Dirección: <input type="text" name="fAddress"> <br>
+			Teléfono: <input type="number" name="fTel"> <br>
+		
+			<input type="submit" value="Submit">
+
+		</form>
 	</div>
 
 </body>
