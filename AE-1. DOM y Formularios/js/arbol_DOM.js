@@ -126,13 +126,21 @@ function cargarDOM(){
     
     //modificamos los atributos a tipo radio
     newRadio.setAttribute("type", "radio");
+    newRadio.setAttribute("name", "r1");
     newRadio2.setAttribute("type", "radio");
+    newRadio2.setAttribute("name", "r1");
     newRadio3.setAttribute("type", "radio");
+    newRadio3.setAttribute("name", "r1");
     newRadio4.setAttribute("type", "radio");
+    newRadio4.setAttribute("name", "r1");
     newRadio5.setAttribute("type", "radio");
+    newRadio5.setAttribute("name", "r2");
     newRadio6.setAttribute("type", "radio");
+    newRadio6.setAttribute("name", "r2");
     newRadio7.setAttribute("type", "radio");
+    newRadio7.setAttribute("name", "r2");
     newRadio8.setAttribute("type", "radio");
+    newRadio8.setAttribute("name", "r2");
 
     // generamos radio buttons
     document.body.appendChild(newRadio);
