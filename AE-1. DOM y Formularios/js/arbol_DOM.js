@@ -201,10 +201,149 @@ function cargarDOM(){
     document.body.appendChild(tagContent_banco4);
     document.body.appendChild(SaltoLinea.cloneNode(true));
     document.body.appendChild(SaltoLinea.cloneNode(true));
+    document.body.appendChild(SaltoLinea.cloneNode(true));
  
     //Fin radio Buttons @Miguel
 
+    //Iniciamos los CheckBox
+
+    //Texto nuevo
+    var element_p4 = document.createElement('p');
+    var tagP4_content = document.createTextNode('¿Qué tarjeta/s necesitarías? ');    
+    element_p4.appendChild(tagP4_content);
+    
+    document.body.appendChild(element_p4);
+   
+
+    document.body.appendChild(SaltoLinea.cloneNode(true));
+    document.body.appendChild(SaltoLinea.cloneNode(true));
+ 
+    //Declaramos las variables y cambiamos atributos.
+    var newCheckBox1 = document.createElement('input');         
+    var newCheckBox2 = document.createElement('input');         
+    var newCheckBox3 = document.createElement('input');         
+    var tagContent_TP = document.createTextNode(' Tarjeta Prepago');
+    var tagContent_TC = document.createTextNode(' Tarjeta Crédito');
+    var tagContent_TD = document.createTextNode(' Tarjeta Débito');
+    newCheckBox1.setAttribute("type", "Checkbox");
+    newCheckBox2.setAttribute("type", "Checkbox");
+    newCheckBox3.setAttribute("type", "Checkbox");
+
+    //Generamos los CheckBoxs
+    document.body.appendChild(newCheckBox1);
+    document.body.appendChild(tagContent_TP);
+    document.body.appendChild(SaltoLinea.cloneNode(true));
+    document.body.appendChild(SaltoLinea.cloneNode(true));
+
+    document.body.appendChild(newCheckBox2);
+    document.body.appendChild(tagContent_TC);
+    document.body.appendChild(SaltoLinea.cloneNode(true));
+    document.body.appendChild(SaltoLinea.cloneNode(true));
+
+    document.body.appendChild(newCheckBox3);
+    document.body.appendChild(tagContent_TD);
+    document.body.appendChild(SaltoLinea.cloneNode(true));
+    document.body.appendChild(SaltoLinea.cloneNode(true));
+    document.body.appendChild(SaltoLinea.cloneNode(true));
+
+    //Fin de los CheckBoxs @Miguel
+
+    //Iniciamos Select
+
+       //Texto nuevo
+       var element_p5 = document.createElement('p');
+       var tagP5_content = document.createTextNode('¿Qué método de pago desea en su tarjeta? ');    
+       element_p5.appendChild(tagP5_content);
+       
+       document.body.appendChild(element_p5);
+
+       //Declaramos variable
+       var newSelect = document.createElement('input');         
+       newSelect.setAttribute("type", "select");
+       document.body.appendChild(newSelect);
+    // No sale bien, avanzo con lo siguiente
+
+
+    document.body.appendChild(SaltoLinea.cloneNode(true));
+    document.body.appendChild(SaltoLinea.cloneNode(true));
+    document.body.appendChild(SaltoLinea.cloneNode(true));
+
+    //Fin de los Select
+
+    //Iniciamos Text Area
+
+       //Texto nuevo
+       var element_p5 = document.createElement('p');
+       var tagP5_content = document.createTextNode('Desea añadir información adicional: ');    
+       element_p5.appendChild(tagP5_content);
+       
+       document.body.appendChild(element_p5);
+
+
+       document.body.appendChild(SaltoLinea.cloneNode(true));
+       document.body.appendChild(SaltoLinea.cloneNode(true));
+
+       //Declaramos variables
+
+       var newTA1 = document.createElement('input');         
+       newTA1.setAttribute("type", "Textarea");
+
+       document.body.appendChild(newTA1);
+
+       //Igual Que el Select, no lo reconoce HTML
+
+
+       document.body.appendChild(SaltoLinea.cloneNode(true));
+       document.body.appendChild(SaltoLinea.cloneNode(true));
+       document.body.appendChild(SaltoLinea.cloneNode(true));
+   
+       //Fin de los TextArea
+   
+       //Iniciamos CheckBox2
+   
+          //Texto nuevo
+          var element_p5 = document.createElement('p');
+          var tagP5_content = document.createTextNode('Desea añadir información adicional: ');    
+          element_p5.appendChild(tagP5_content);
+          
+          document.body.appendChild(element_p5);
+   
+   
+          document.body.appendChild(SaltoLinea.cloneNode(true));
+          document.body.appendChild(SaltoLinea.cloneNode(true));
+
+        //Declaramos las variables y cambiamos atributos.
+        var newCheckBox4 = document.createElement('input');         
+        var newCheckBox5 = document.createElement('input');         
+        var tagContent_Info1 = document.createTextNode(' He leído y acepto las condiciones de privacidad');
+        var tagContent_Info2 = document.createTextNode(' Soy mayor de edad');
+        newCheckBox4.setAttribute("type", "Checkbox");
+        newCheckBox5.setAttribute("type", "Checkbox");
+        
+        //Generamos los CheckBoxs2
+        document.body.appendChild(newCheckBox4);
+        document.body.appendChild(tagContent_Info1);
+        document.body.appendChild(SaltoLinea.cloneNode(true));
+        document.body.appendChild(SaltoLinea.cloneNode(true));
+
+        document.body.appendChild(newCheckBox5);
+        document.body.appendChild(tagContent_Info2);
+        document.body.appendChild(SaltoLinea.cloneNode(true));
+        document.body.appendChild(SaltoLinea.cloneNode(true));
+        
+        //Fin de los CheckBox2 @Miguel
+
+        //Generar Boton de Submit        
+		
+        var newBoton1 = document.createElement('input'); 
+        newBoton1.setAttribute("type", "submit");
+        newBoton1.setAttribute("value", "submit");
+
+        document.body.appendChild(newBoton1);
+
 }
+
+
 
 function validateForm(){
     
