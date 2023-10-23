@@ -34,10 +34,12 @@ function cargarDOM(){
 
     // formulario.appendChild();
 
-    /*Intento de Creadion de texto "Nombre: "*/
+    /*Intento de Cajas de texto @Miguel*/
+
+    //Declaro los saltos de linea
     var SaltoLinea = document.createElement('br');
     
-
+    //Declaro las variables de los primeros cuadros y los textos a usar
     var TypeText = document.createElement('type' , Text);
     var TypeNumber = document.createElement('type', Number);
     var newNombre = document.createElement('input', TypeText, id="fNombre");    
@@ -51,31 +53,35 @@ function cargarDOM(){
     var tagContent_Direccion = document.createTextNode('Dirección: ');
     var tagContent_Telef = document.createTextNode('Teléfono: ');
     
-
+    //Generamos el Nombre
     document.body.appendChild(tagContent_Nombre);
     document.body.appendChild(newNombre);
     document.body.appendChild(SaltoLinea.cloneNode(true));
     document.body.appendChild(SaltoLinea.cloneNode(true));
     console.log("se ha generado casilla Nombre")
 
+    //Generamos el apellido
     document.body.appendChild(tagContent_Apellido);
     document.body.appendChild(newApellido);
     document.body.appendChild(SaltoLinea.cloneNode(true));
     document.body.appendChild(SaltoLinea.cloneNode(true));
     console.log("se ha generado casilla Apellido")
 
+    //Generamos el DNI
     document.body.appendChild(tagContent_DNI);
     document.body.appendChild(newDNI);
     document.body.appendChild(SaltoLinea.cloneNode(true));
     document.body.appendChild(SaltoLinea.cloneNode(true));
     console.log("se ha generado casilla DNI")
 
+    //Generamos la Direccion
     document.body.appendChild(tagContent_Direccion);
     document.body.appendChild(newDireccion);
     document.body.appendChild(SaltoLinea.cloneNode(true));
     document.body.appendChild(SaltoLinea.cloneNode(true));
     console.log("se ha generado casilla Direccion")
 
+    //Generamos el Telefono
     document.body.appendChild(tagContent_Telef);
     document.body.appendChild(newTelef);
     document.body.appendChild(SaltoLinea.cloneNode(true));
@@ -83,10 +89,27 @@ function cargarDOM(){
     console.log("se ha generado casilla Telefono");
 
     /*Fin de Cuadros de texto*/
+//-------------------------------------------------------------------------------------------------
+    /* Intentamos  radio Buttons @Miguel*/
 
-    
+    //Espacios para separar los elementos
+    document.body.appendChild(SaltoLinea.cloneNode(true));
+    document.body.appendChild(SaltoLinea.cloneNode(true));
+    document.body.appendChild(SaltoLinea.cloneNode(true));
 
-    
+
+    var TypeText = document.createElement('type' , Text);
+    var TypeNumber = document.createElement('type', Number);
+    var newNombre = document.createElement('input', TypeText, id="fNombre");    
+    var newApellido = document.createElement('input', TypeText, id="fApellido");
+    var newDNI = document.createElement('input', TypeText, id="fDNI");
+    var newDireccion = document.createElement('input', TypeText, id="fDireccion");
+    var newTelef = document.createElement('input', TypeNumber, id="fTelef");
+    var tagContent_Nombre = document.createTextNode('Nombre: ');
+    var tagContent_Apellido = document.createTextNode('Apellidos: ');
+    var tagContent_DNI = document.createTextNode('DNI/NIE: ');
+    var tagContent_Direccion = document.createTextNode('Dirección: ');
+    var tagContent_Telef = document.createTextNode('Teléfono: ');
 
 }
 
