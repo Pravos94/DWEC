@@ -301,17 +301,6 @@ function cargarDOM(){
    
        //Iniciamos CheckBox2
    
-          //Texto nuevo
-          var element_p5 = document.createElement('p');
-          var tagP5_content = document.createTextNode('Desea añadir información adicional: ');    
-          element_p5.appendChild(tagP5_content);
-          
-          document.body.appendChild(element_p5);
-   
-   
-          document.body.appendChild(SaltoLinea.cloneNode(true));
-          document.body.appendChild(SaltoLinea.cloneNode(true));
-
         //Declaramos las variables y cambiamos atributos.
         var newCheckBox4 = document.createElement('input');         
         var newCheckBox5 = document.createElement('input');         
