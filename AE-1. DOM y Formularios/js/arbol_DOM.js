@@ -258,10 +258,46 @@ function cargarDOM(){
        document.body.appendChild(element_p5);
 
        //Declaramos variable
-       var newSelect = document.createElement('input');         
-       newSelect.setAttribute("type", "select");
-       document.body.appendChild(newSelect);
-    // No sale bien, avanzo con lo siguiente
+    //    var newSelect = document.createElement('input');         
+    //    newSelect.setAttribute("type", "select");
+    //    document.body.appendChild(newSelect);
+       var element_select = document.createElement('select');      
+       element_select.setAttribute("id", "MetodoPago_JS");
+    //    var tagSelect_content = document.createTextNode('');
+    //    element_p5.appendChild(tagSelect_content);
+
+       var element_Option0 = document.createElement('option'); 
+       element_Option0.setAttribute("value", "0");
+       var tagOption0_content = document.createTextNode('Diario');
+       element_Option0.appendChild(tagOption0_content);      
+
+       var element_Option1 = document.createElement('option');
+       element_Option1.setAttribute("value", "1"); 
+       var tagOption1_content = document.createTextNode('Mensual');
+       element_Option1.appendChild(tagOption1_content);
+
+       var element_Option2 = document.createElement('option');
+       element_Option2.setAttribute("value", "2"); 
+       var tagOption2_content = document.createTextNode('Trimestral');
+       element_Option2.appendChild(tagOption2_content);
+
+       var element_Option3 = document.createElement('option');
+       element_Option3.setAttribute("value", "3"); 
+       var tagOption3_content = document.createTextNode('Quincenal');
+       element_Option3.appendChild(tagOption3_content);
+
+       var element_Option4 = document.createElement('option');
+       element_Option4.setAttribute("value", "4"); 
+       var tagOption4_content = document.createTextNode('Anual');
+       element_Option4.appendChild(tagOption4_content);
+
+       element_select.appendChild(element_Option0);
+       element_select.appendChild(element_Option1);
+       element_select.appendChild(element_Option2);
+       element_select.appendChild(element_Option3);
+       element_select.appendChild(element_Option4);
+
+       document.body.appendChild(element_select);
 
 
     document.body.appendChild(SaltoLinea.cloneNode(true));
@@ -285,8 +321,10 @@ function cargarDOM(){
 
        //Declaramos variables
 
-       var newTA1 = document.createElement('input');         
-       newTA1.setAttribute("type", "Textarea");
+    //    var newTA1 = document.createElement('input');         
+    //    newTA1.setAttribute("type", "textarea");
+       var newTA1 = document.createElement('textarea');         
+       newTA1.setAttribute("id", "observaciones_JS");
 
        document.body.appendChild(newTA1);
 
