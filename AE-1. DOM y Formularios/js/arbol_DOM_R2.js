@@ -29,8 +29,8 @@ function cargarDOM_R2(){
     div1.appendChild(formulario);
     formulario.appendChild(fieldset);
 
-   //  formulario.setAttribute('method', "post"); //Asignar el atributo method
-   //  formulario.setAttribute('action', ""); //Asignar el atributo action');
+    formulario.setAttribute('method', "post"); //Asignar el atributo method
+    formulario.setAttribute('action', ""); //Asignar el atributo action');
 
     //Declaro las variables de los primeros cuadros y los textos a usar
     var newNombre = document.createElement('input', id="fNombre");    
@@ -97,33 +97,38 @@ function cargarDOM_R2(){
     fieldset.appendChild(element_p2);
    
 
-    var newRadio = document.createElement('input');
-    var newRadio2 = document.createElement('input');
-    var newRadio3 = document.createElement('input');    
+    var newRadio_Peq = document.createElement('input');
+    var newRadio_Med = document.createElement('input');
+    var newRadio_Gra = document.createElement('input');    
     var tagContent_Pequeña = document.createTextNode(' Pequeña');
     var tagContent_Mediana = document.createTextNode(' Mediana');
     var tagContent_Grande = document.createTextNode(' Grande');
     
     //modificamos los atributos a tipo radio
-    newRadio.setAttribute("type", "radio");
-    newRadio.setAttribute("name", "r1");
-    newRadio2.setAttribute("type", "radio");
-    newRadio2.setAttribute("name", "r1");
-    newRadio3.setAttribute("type", "radio");
-    newRadio3.setAttribute("name", "r1");
+    newRadio_Peq.setAttribute("type", "radio");
+    newRadio_Peq.setAttribute("name", "r1");
+    newRadio_Peq.setAttribute("value", 5);
+
+    newRadio_Med.setAttribute("type", "radio");
+    newRadio_Med.setAttribute("name", "r1");
+    newRadio_Med.setAttribute("value", 10);
+
+    newRadio_Gra.setAttribute("type", "radio");
+    newRadio_Gra.setAttribute("name", "r1");
+    newRadio_Gra.setAttribute("value", 15);
 
     // generamos radio buttons
-    fieldset.appendChild(newRadio);
+    fieldset.appendChild(newRadio_Peq);
     fieldset.appendChild(tagContent_Pequeña);
-    newRadio.required = true;
+    newRadio_Peq.required = true;
 
-    fieldset.appendChild(newRadio2);
+    fieldset.appendChild(newRadio_Med);
     fieldset.appendChild(tagContent_Mediana);
-    newRadio2.required = true;
+    newRadio_Med.required = true;
 
-    fieldset.appendChild(newRadio3);
+    fieldset.appendChild(newRadio_Gra);
     fieldset.appendChild(tagContent_Grande);
-    newRadio3.required = true;
+    newRadio_Gra.required = true;
 
     fieldset.appendChild(SaltoLinea.cloneNode(true));
     fieldset.appendChild(SaltoLinea.cloneNode(true));
@@ -146,9 +151,13 @@ function cargarDOM_R2(){
     var tagContent_CH = document.createTextNode(' Champiñón');
     var tagContent_CE = document.createTextNode(' Cebolla');
     newCheckBox1.setAttribute("type", "Checkbox");
+    newCheckBox1.setAttribute("value", 1);
     newCheckBox2.setAttribute("type", "Checkbox");
+    newCheckBox2.setAttribute("value", 1);
     newCheckBox3.setAttribute("type", "Checkbox");
+    newCheckBox3.setAttribute("value", 1);
     newCheckBox4.setAttribute("type", "Checkbox");
+    newCheckBox4.setAttribute("value", 1);
 
     //Generamos los CheckBoxs
     fieldset.appendChild(newCheckBox1);
@@ -172,11 +181,11 @@ function cargarDOM_R2(){
 
         //Generar Boton de Submit        
 		
-        var newBoton1 = document.createElement('input'); 
-        newBoton1.setAttribute("type", "submit");
-        newBoton1.setAttribute("value", "submit");
+        var btnSubmit = document.createElement('input'); 
+        btnSubmit.setAttribute("type", "submit");
+        btnSubmit.setAttribute("value", "Procesar Pedido");
 
-        fieldset.appendChild(newBoton1);
+        fieldset.appendChild(btnSubmit);
 
 }
 
