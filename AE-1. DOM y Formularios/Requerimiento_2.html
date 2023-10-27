@@ -1,0 +1,129 @@
+<!–
+Requerimiento 2
+
+En esta actividad debes desarrollar un formulario completo, 
+sin envío al servidor, que sirva para dar de alta un pedido 
+de una pizza dentro de una web de una pizzería.
+
+Los campos del formulario son los siguientes:
+
+* Nombre
+* Dirección
+* Teléfono
+* Email
+* Un radio button con el tamaño de la pizza, 
+	[pequeña, mediana, grande]
+* 4 Checkbox con los diferentes ingredientes de la pizza
+* Un botón de procesar el pedido
+
+Todos los campos de tipo texto deben 
+de estar rellenos para que sean válidos, además debe de elegir 
+obligatoriamente un tamaño de la pizza y al menos un ingrediente para ella.
+
+Al pulsar el botón de procesar el pedido, se mostrará el precio total del pedido 
+calculándolo en base a los siguientes parámetros:
+
+5€ para la pizza pequeña
+10€ para la pizza mediana
+15€ para la pizza grande
+Cada ingrediente elegido tendrá un valor de 1€
+Valoración: 5 puntos sobre 10
+–>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<title>AE-1 - Pizzería</title>
+
+	<script type="text/javascript" src="js/arbol_DOM_R2.js"></script>
+</head>
+
+<body onload="cargarDOM_R2()">
+	
+	<div id="div1">
+		<!-- <form name="myForm" action="js/arbol_DOM.js" onsubmit="return validateForm()" method="post">
+			<table>
+			<tr>
+				<td>Nombre: <input type="text" name="fName"> <br>
+			<br>
+			Apellidos: <input type="text" name="fSurname"> <br>
+			<br>
+			DNI: <input type="text" name="fDni"> <br>
+			<br>
+			Dirección: <input type="text" name="fAddress"> <br>
+			<br>
+			Teléfono: <input type="number" name="fTel"> <br>
+			<br>
+			<br><br>
+				</td>
+				<td>
+			Tipo de cuenta:
+			<br><br>
+			<input type="radio" value="Cuenta Joven" name="Tipo de Cuenta" id="Cuenta1" />Cuenta Joven 
+			<br><br>
+			<input type="radio" value="Cuenta Adulto" name="Tipo de Cuenta" id="Cuenta1" />Cuenta Adulto
+			<br><br>
+			<input type="radio" value="Cuenta Empresarial" name="Tipo de Cuenta" id="Cuenta1" />Cuenta Jubileta
+			<br><br>
+			<input type="radio" value="Cuenta Jubileta" name="Tipo de Cuenta" id="Cuenta1" />Cuenta Empresarial
+			<br><br>
+				</td>
+			</tr>
+		</table>
+			<br><br>
+			Qué entidad bancaria desea:
+
+			<br><br>
+
+			<input type="radio" value="Orange" name="Banco Elegido" id="Banco1" /> ING
+			<input type="radio" value="Blue" name="Banco Elegido" id="Banco2" /> CaixaBank
+			<input type="radio" value="Red" name="Banco Elegido" id="Banco3" /> Santander
+			<input type="radio" value="Green"  	name="Banco Elegido"	id="Banco4"/> Caja Rural
+			
+
+			<br><br><br>
+			
+			¿Qué tarjetas necesitarías?:
+			<br><br>
+			<input type="checkbox" value="Tarjeta" name="Tarjeta Prepago" id="Banco3" />Tarjeta de Prepago
+			<br>
+			<input type="checkbox" value="Tarjeta2" name="Tarjeta Credito" id="Banco4"/>Tarjeta de Crédito
+			<br>
+			<input type="checkbox" value="Tarjeta3" name="Tarjeta Debito" id="Banco3" />Tarjeta de Debito
+			<br><br>
+
+			Metodo de pago de su tarjeta 
+			<select id="MetodoPago" name="Tipo de pago">
+				<option value="0">Diario</option>
+				<option value="1">Mensual</option>
+				<option value="2">Trimestral</option>
+				<option value="3">Quincenal</option>	
+				<option value="4">Anual</option>
+			</select>
+			<br>
+			<br>
+
+
+			Desea añadir alguna información más:
+			<br>
+			<textarea id="observaciones"></textarea>
+			<br><br>
+
+			<input type="checkbox" value="Informacion1">He leído y acepto las condiciones de privacidad
+			<br>
+			<input type="checkbox" value="Informacion2"/>Soy mayor de edad
+			<br>
+
+			<h1>---------------------------Todo Lo demas abajo generado por DOM--------------------------------------</h1>
+			
+		</form>	
+
+		<input type="submit" value="Submit">  -->
+	</div>
+
+</body>
+</html>

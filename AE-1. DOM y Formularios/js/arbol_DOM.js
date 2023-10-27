@@ -54,6 +54,7 @@ function cargarDOM(){
 
     //Declaro las variables de los primeros cuadros y los textos a usar
     var newNombre = document.createElement('input', id="fNombre");    
+    newNombre.autofocus = true;
     var newApellido = document.createElement('input', id="fApellido");
     var newDNI = document.createElement('input', id="fDNI");
     var newDireccion = document.createElement('input', id="fDireccion");
