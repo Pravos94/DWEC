@@ -23,7 +23,7 @@ function cargarDOM(){
     var tagP_content = document.createTextNode('Debe rellenar el siguiente formulario para crear su perfil: ');    
     element_p.appendChild(tagP_content);
 
-    document.body.appendChild(element_p); // Párrafo creado y vinculado
+    div1.appendChild(element_p); // Párrafo creado y vinculado
 
       
     // var div = cuerpo.getElementsByTagName('div');
@@ -43,7 +43,7 @@ function cargarDOM(){
     var formulario = document.createElement('form');
     var fieldset = document.createElement('fieldset');
 
-    document.body.appendChild(formulario);
+    div1.appendChild(formulario);
     formulario.appendChild(fieldset);
 
    //  formulario.setAttribute('method', "post"); //Asignar el atributo method
@@ -114,14 +114,14 @@ function cargarDOM(){
 
     /*Fin de Cuadros de texto*/
 
-    fieldset.appendChild(SaltoLinea.cloneNode(true));
+   //  fieldset.appendChild(SaltoLinea.cloneNode(true));
     
     var element_p2 = document.createElement('p');
     var tagP2_content = document.createTextNode('¿Qué cuenta desea Crear? ');    
     element_p2.appendChild(tagP2_content);
 
     fieldset.appendChild(element_p2);
-    fieldset.appendChild(SaltoLinea.cloneNode(true));
+   //  fieldset.appendChild(SaltoLinea.cloneNode(true));
 
     //Espacios para separar los elementos
     
@@ -181,14 +181,14 @@ function cargarDOM(){
     fieldset.appendChild(tagContent_Cuenta4);
     fieldset.appendChild(SaltoLinea.cloneNode(true));
     fieldset.appendChild(SaltoLinea.cloneNode(true));
-    fieldset.appendChild(SaltoLinea.cloneNode(true));
+   //  fieldset.appendChild(SaltoLinea.cloneNode(true));
 
     // Siguientes Radio buttons
 
 
-    fieldset.appendChild(SaltoLinea.cloneNode(true));
-    fieldset.appendChild(SaltoLinea.cloneNode(true));
-    fieldset.appendChild(SaltoLinea.cloneNode(true));
+   //  fieldset.appendChild(SaltoLinea.cloneNode(true));
+   //  fieldset.appendChild(SaltoLinea.cloneNode(true));
+   //  fieldset.appendChild(SaltoLinea.cloneNode(true));
     
     var element_p3 = document.createElement('p');
     var tagP3_content = document.createTextNode('¿Qué cuenta desea Entidad bancaría le gustaría? ');    
@@ -197,8 +197,8 @@ function cargarDOM(){
     fieldset.appendChild(element_p3);
 
     
-    fieldset.appendChild(SaltoLinea.cloneNode(true));
-    fieldset.appendChild(SaltoLinea.cloneNode(true));
+   //  fieldset.appendChild(SaltoLinea.cloneNode(true));
+   //  fieldset.appendChild(SaltoLinea.cloneNode(true));
 
     
     fieldset.appendChild(newRadio5);
@@ -220,7 +220,7 @@ function cargarDOM(){
     fieldset.appendChild(tagContent_banco4);
     fieldset.appendChild(SaltoLinea.cloneNode(true));
     fieldset.appendChild(SaltoLinea.cloneNode(true));
-    fieldset.appendChild(SaltoLinea.cloneNode(true));
+   //  fieldset.appendChild(SaltoLinea.cloneNode(true));
  
     //Fin radio Buttons @Miguel
 
@@ -234,8 +234,8 @@ function cargarDOM(){
     fieldset.appendChild(element_p4);
    
 
-    fieldset.appendChild(SaltoLinea.cloneNode(true));
-    fieldset.appendChild(SaltoLinea.cloneNode(true));
+   //  fieldset.appendChild(SaltoLinea.cloneNode(true));
+   //  fieldset.appendChild(SaltoLinea.cloneNode(true));
  
     //Declaramos las variables y cambiamos atributos.
     var newCheckBox1 = document.createElement('input');         
@@ -263,7 +263,7 @@ function cargarDOM(){
     fieldset.appendChild(tagContent_TD);
     fieldset.appendChild(SaltoLinea.cloneNode(true));
     fieldset.appendChild(SaltoLinea.cloneNode(true));
-    fieldset.appendChild(SaltoLinea.cloneNode(true));
+   //  fieldset.appendChild(SaltoLinea.cloneNode(true));
 
     //Fin de los CheckBoxs @Miguel
 
@@ -274,7 +274,7 @@ function cargarDOM(){
        var tagP5_content = document.createTextNode('¿Qué método de pago desea en su tarjeta? ');    
        element_p5.appendChild(tagP5_content);
        
-       document.body.appendChild(element_p5);
+       fieldset.appendChild(element_p5);
 
        //Declaramos variable
     //    var newSelect = document.createElement('input');         
@@ -319,7 +319,7 @@ function cargarDOM(){
        fieldset.appendChild(element_select);
 
 
-    fieldset.appendChild(SaltoLinea.cloneNode(true));
+   //  fieldset.appendChild(SaltoLinea.cloneNode(true));
     fieldset.appendChild(SaltoLinea.cloneNode(true));
     fieldset.appendChild(SaltoLinea.cloneNode(true));
 
@@ -335,8 +335,8 @@ function cargarDOM(){
        fieldset.appendChild(element_p5);
 
 
-       fieldset.appendChild(SaltoLinea.cloneNode(true));
-       fieldset.appendChild(SaltoLinea.cloneNode(true));
+      //  fieldset.appendChild(SaltoLinea.cloneNode(true));
+      //  fieldset.appendChild(SaltoLinea.cloneNode(true));
 
        //Declaramos variables
 
@@ -352,7 +352,7 @@ function cargarDOM(){
 
        fieldset.appendChild(SaltoLinea.cloneNode(true));
        fieldset.appendChild(SaltoLinea.cloneNode(true));
-       fieldset.appendChild(SaltoLinea.cloneNode(true));
+      //  fieldset.appendChild(SaltoLinea.cloneNode(true));
    
        //Fin de los TextArea
    
@@ -370,7 +370,7 @@ function cargarDOM(){
         fieldset.appendChild(newCheckBox4);
         fieldset.appendChild(tagContent_Info1);
         fieldset.appendChild(SaltoLinea.cloneNode(true));
-        fieldset.appendChild(SaltoLinea.cloneNode(true));
+      //   fieldset.appendChild(SaltoLinea.cloneNode(true));
 
         fieldset.appendChild(newCheckBox5);
         fieldset.appendChild(tagContent_Info2);

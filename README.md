@@ -25,13 +25,13 @@ En esta actividad debes desarrollar un formulario completo, sin envío al servid
 
 Los campos del formulario son los siguientes:
 
-Nombre
-Dirección
-Teléfono
-Email
-Un radio button con el tamaño de la pizza, pudiendo ser pequeña, mediana o grande
-4 Checkbox con los diferentes ingredientes de la pizza
-Un botón de procesar el pedido
+* Nombre
+* Dirección
+* Teléfono
+* Email
+* Un radio button con el tamaño de la pizza, [pequeña, mediana, grande]
+* 4 Checkbox con los diferentes ingredientes de la pizza
+* Un botón de procesar el pedido
 Todos los campos tienen que estar rellenos de tipo texto deben de estar rellenos para que sean válidos, además debe de elegir obligatoriamente un tamaño de la pizza y al menos un ingrediente para ella.
 
 Al pulsar el botón de procesar el pedido, se mostrará el precio total del pedido calculándolo en base a los siguientes parámetros:
