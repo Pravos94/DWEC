@@ -39,6 +39,19 @@ function cargarDOM(){
     //Declaro los saltos de linea
     var SaltoLinea = document.createElement('br');
     
+    //Declaramos variables formulario y bordes del form
+    var formulario = document.createElement('form');
+    var fieldset = document.createElement('fieldset');
+
+    document.body.appendChild(formulario);
+    formulario.appendChild(fieldset);
+
+   //  formulario.setAttribute('method', "post"); //Asignar el atributo method
+   //  formulario.setAttribute('action', ""); //Asignar el atributo action');
+
+    //Vinculando formulario al DOM y fieldset al form
+
+
     //Declaro las variables de los primeros cuadros y los textos a usar
     var newNombre = document.createElement('input', id="fNombre");    
     var newApellido = document.createElement('input', id="fApellido");
@@ -50,59 +63,65 @@ function cargarDOM(){
     var tagContent_DNI = document.createTextNode('DNI/NIE: ');
     var tagContent_Direccion = document.createTextNode('Dirección: ');
     var tagContent_Telef = document.createTextNode('Teléfono: ');
+    var icon_Telef = document.createElement('img');
+    icon_Telef.setAttribute('src','img/llamada.png');
+    icon_Telef.setAttribute('alt','Icono Llamada');
+
+    var icon_Casa = document.createElement('img');
+    icon_Casa.setAttribute('src','img/casa.gif');
+    icon_Casa.setAttribute('alt','Icono Casa');
+    icon_Casa.setAttribute('style','width:16px;height:16px');
 
     //De esta fomra cambiamos el tipo de atributo
     newTelef.setAttribute("type", "Number");
 
     //Generamos el Nombre
-    document.body.appendChild(tagContent_Nombre);
-    document.body.appendChild(newNombre);
-    document.body.appendChild(SaltoLinea.cloneNode(true));
-    document.body.appendChild(SaltoLinea.cloneNode(true));
+    fieldset.appendChild(tagContent_Nombre);
+    fieldset.appendChild(newNombre);
+    fieldset.appendChild(SaltoLinea.cloneNode(true));
+    fieldset.appendChild(SaltoLinea.cloneNode(true));
     console.log("se ha generado casilla Nombre")
 
     //Generamos el apellido
-    document.body.appendChild(tagContent_Apellido);
-    document.body.appendChild(newApellido);
-    document.body.appendChild(SaltoLinea.cloneNode(true));
-    document.body.appendChild(SaltoLinea.cloneNode(true));
+    fieldset.appendChild(tagContent_Apellido);
+    fieldset.appendChild(newApellido);
+    fieldset.appendChild(SaltoLinea.cloneNode(true));
+    fieldset.appendChild(SaltoLinea.cloneNode(true));
     console.log("se ha generado casilla Apellido")
 
     //Generamos el DNI
-    document.body.appendChild(tagContent_DNI);
-    document.body.appendChild(newDNI);
-    document.body.appendChild(SaltoLinea.cloneNode(true));
-    document.body.appendChild(SaltoLinea.cloneNode(true));
+    fieldset.appendChild(tagContent_DNI);
+    fieldset.appendChild(newDNI);
+    fieldset.appendChild(SaltoLinea.cloneNode(true));
+    fieldset.appendChild(SaltoLinea.cloneNode(true));
     console.log("se ha generado casilla DNI")
 
     //Generamos la Direccion
-    document.body.appendChild(tagContent_Direccion);
-    document.body.appendChild(newDireccion);
-    document.body.appendChild(SaltoLinea.cloneNode(true));
-    document.body.appendChild(SaltoLinea.cloneNode(true));
+    fieldset.appendChild(tagContent_Direccion);
+    fieldset.appendChild(newDireccion);
+    fieldset.appendChild(icon_Casa);
+    fieldset.appendChild(SaltoLinea.cloneNode(true));
+    fieldset.appendChild(SaltoLinea.cloneNode(true));
     console.log("se ha generado casilla Direccion")
 
     //Generamos el Telefono
-    document.body.appendChild(tagContent_Telef);
-    document.body.appendChild(newTelef);
-    document.body.appendChild(SaltoLinea.cloneNode(true));
-    document.body.appendChild(SaltoLinea.cloneNode(true));
+    fieldset.appendChild(tagContent_Telef);
+    fieldset.appendChild(newTelef);
+    fieldset.appendChild(icon_Telef);
+    fieldset.appendChild(SaltoLinea.cloneNode(true));
+    fieldset.appendChild(SaltoLinea.cloneNode(true));
     console.log("se ha generado casilla Telefono");
 
     /*Fin de Cuadros de texto*/
-//-------------------------------------------------------------------------------------------------
-    /* Intentamos  radio Buttons @Miguel*/
 
-    document.body.appendChild(SaltoLinea.cloneNode(true));
-    document.body.appendChild(SaltoLinea.cloneNode(true));
-    document.body.appendChild(SaltoLinea.cloneNode(true));
+    fieldset.appendChild(SaltoLinea.cloneNode(true));
     
     var element_p2 = document.createElement('p');
     var tagP2_content = document.createTextNode('¿Qué cuenta desea Crear? ');    
     element_p2.appendChild(tagP2_content);
 
-    document.body.appendChild(element_p2);
-    document.body.appendChild(SaltoLinea.cloneNode(true));
+    fieldset.appendChild(element_p2);
+    fieldset.appendChild(SaltoLinea.cloneNode(true));
 
     //Espacios para separar los elementos
     
@@ -143,65 +162,65 @@ function cargarDOM(){
     newRadio8.setAttribute("name", "r2");
 
     // generamos radio buttons
-    document.body.appendChild(newRadio);
-    document.body.appendChild(tagContent_Cuenta1);
-    document.body.appendChild(SaltoLinea.cloneNode(true));
-    document.body.appendChild(SaltoLinea.cloneNode(true));
+    fieldset.appendChild(newRadio);
+    fieldset.appendChild(tagContent_Cuenta1);
+    fieldset.appendChild(SaltoLinea.cloneNode(true));
+    fieldset.appendChild(SaltoLinea.cloneNode(true));
 
-    document.body.appendChild(newRadio2);
-    document.body.appendChild(tagContent_Cuenta2);
-    document.body.appendChild(SaltoLinea.cloneNode(true));
-    document.body.appendChild(SaltoLinea.cloneNode(true));
+    fieldset.appendChild(newRadio2);
+    fieldset.appendChild(tagContent_Cuenta2);
+    fieldset.appendChild(SaltoLinea.cloneNode(true));
+    fieldset.appendChild(SaltoLinea.cloneNode(true));
 
-    document.body.appendChild(newRadio3);
-    document.body.appendChild(tagContent_Cuenta3);
-    document.body.appendChild(SaltoLinea.cloneNode(true));
-    document.body.appendChild(SaltoLinea.cloneNode(true));
+    fieldset.appendChild(newRadio3);
+    fieldset.appendChild(tagContent_Cuenta3);
+    fieldset.appendChild(SaltoLinea.cloneNode(true));
+    fieldset.appendChild(SaltoLinea.cloneNode(true));
     
-    document.body.appendChild(newRadio4);
-    document.body.appendChild(tagContent_Cuenta4);
-    document.body.appendChild(SaltoLinea.cloneNode(true));
-    document.body.appendChild(SaltoLinea.cloneNode(true));
-    document.body.appendChild(SaltoLinea.cloneNode(true));
+    fieldset.appendChild(newRadio4);
+    fieldset.appendChild(tagContent_Cuenta4);
+    fieldset.appendChild(SaltoLinea.cloneNode(true));
+    fieldset.appendChild(SaltoLinea.cloneNode(true));
+    fieldset.appendChild(SaltoLinea.cloneNode(true));
 
     // Siguientes Radio buttons
 
 
-    document.body.appendChild(SaltoLinea.cloneNode(true));
-    document.body.appendChild(SaltoLinea.cloneNode(true));
-    document.body.appendChild(SaltoLinea.cloneNode(true));
+    fieldset.appendChild(SaltoLinea.cloneNode(true));
+    fieldset.appendChild(SaltoLinea.cloneNode(true));
+    fieldset.appendChild(SaltoLinea.cloneNode(true));
     
     var element_p3 = document.createElement('p');
     var tagP3_content = document.createTextNode('¿Qué cuenta desea Entidad bancaría le gustaría? ');    
     element_p3.appendChild(tagP3_content);
 
-    document.body.appendChild(element_p3);
+    fieldset.appendChild(element_p3);
 
     
-    document.body.appendChild(SaltoLinea.cloneNode(true));
-    document.body.appendChild(SaltoLinea.cloneNode(true));
+    fieldset.appendChild(SaltoLinea.cloneNode(true));
+    fieldset.appendChild(SaltoLinea.cloneNode(true));
 
     
-    document.body.appendChild(newRadio5);
-    document.body.appendChild(tagContent_banco1);
-    document.body.appendChild(SaltoLinea.cloneNode(true));
-    document.body.appendChild(SaltoLinea.cloneNode(true));
+    fieldset.appendChild(newRadio5);
+    fieldset.appendChild(tagContent_banco1);
+    fieldset.appendChild(SaltoLinea.cloneNode(true));
+    fieldset.appendChild(SaltoLinea.cloneNode(true));
     
-    document.body.appendChild(newRadio6);
-    document.body.appendChild(tagContent_banco2);
-    document.body.appendChild(SaltoLinea.cloneNode(true));
-    document.body.appendChild(SaltoLinea.cloneNode(true));
+    fieldset.appendChild(newRadio6);
+    fieldset.appendChild(tagContent_banco2);
+    fieldset.appendChild(SaltoLinea.cloneNode(true));
+    fieldset.appendChild(SaltoLinea.cloneNode(true));
     
-    document.body.appendChild(newRadio7);
-    document.body.appendChild(tagContent_banco3);
-    document.body.appendChild(SaltoLinea.cloneNode(true));
-    document.body.appendChild(SaltoLinea.cloneNode(true));
+    fieldset.appendChild(newRadio7);
+    fieldset.appendChild(tagContent_banco3);
+    fieldset.appendChild(SaltoLinea.cloneNode(true));
+    fieldset.appendChild(SaltoLinea.cloneNode(true));
     
-    document.body.appendChild(newRadio8);
-    document.body.appendChild(tagContent_banco4);
-    document.body.appendChild(SaltoLinea.cloneNode(true));
-    document.body.appendChild(SaltoLinea.cloneNode(true));
-    document.body.appendChild(SaltoLinea.cloneNode(true));
+    fieldset.appendChild(newRadio8);
+    fieldset.appendChild(tagContent_banco4);
+    fieldset.appendChild(SaltoLinea.cloneNode(true));
+    fieldset.appendChild(SaltoLinea.cloneNode(true));
+    fieldset.appendChild(SaltoLinea.cloneNode(true));
  
     //Fin radio Buttons @Miguel
 
@@ -212,11 +231,11 @@ function cargarDOM(){
     var tagP4_content = document.createTextNode('¿Qué tarjeta/s necesitarías? ');    
     element_p4.appendChild(tagP4_content);
     
-    document.body.appendChild(element_p4);
+    fieldset.appendChild(element_p4);
    
 
-    document.body.appendChild(SaltoLinea.cloneNode(true));
-    document.body.appendChild(SaltoLinea.cloneNode(true));
+    fieldset.appendChild(SaltoLinea.cloneNode(true));
+    fieldset.appendChild(SaltoLinea.cloneNode(true));
  
     //Declaramos las variables y cambiamos atributos.
     var newCheckBox1 = document.createElement('input');         
@@ -230,21 +249,21 @@ function cargarDOM(){
     newCheckBox3.setAttribute("type", "Checkbox");
 
     //Generamos los CheckBoxs
-    document.body.appendChild(newCheckBox1);
-    document.body.appendChild(tagContent_TP);
-    document.body.appendChild(SaltoLinea.cloneNode(true));
-    document.body.appendChild(SaltoLinea.cloneNode(true));
+    fieldset.appendChild(newCheckBox1);
+    fieldset.appendChild(tagContent_TP);
+    fieldset.appendChild(SaltoLinea.cloneNode(true));
+    fieldset.appendChild(SaltoLinea.cloneNode(true));
 
-    document.body.appendChild(newCheckBox2);
-    document.body.appendChild(tagContent_TC);
-    document.body.appendChild(SaltoLinea.cloneNode(true));
-    document.body.appendChild(SaltoLinea.cloneNode(true));
+    fieldset.appendChild(newCheckBox2);
+    fieldset.appendChild(tagContent_TC);
+    fieldset.appendChild(SaltoLinea.cloneNode(true));
+    fieldset.appendChild(SaltoLinea.cloneNode(true));
 
-    document.body.appendChild(newCheckBox3);
-    document.body.appendChild(tagContent_TD);
-    document.body.appendChild(SaltoLinea.cloneNode(true));
-    document.body.appendChild(SaltoLinea.cloneNode(true));
-    document.body.appendChild(SaltoLinea.cloneNode(true));
+    fieldset.appendChild(newCheckBox3);
+    fieldset.appendChild(tagContent_TD);
+    fieldset.appendChild(SaltoLinea.cloneNode(true));
+    fieldset.appendChild(SaltoLinea.cloneNode(true));
+    fieldset.appendChild(SaltoLinea.cloneNode(true));
 
     //Fin de los CheckBoxs @Miguel
 
@@ -297,12 +316,12 @@ function cargarDOM(){
        element_select.appendChild(element_Option3);
        element_select.appendChild(element_Option4);
 
-       document.body.appendChild(element_select);
+       fieldset.appendChild(element_select);
 
 
-    document.body.appendChild(SaltoLinea.cloneNode(true));
-    document.body.appendChild(SaltoLinea.cloneNode(true));
-    document.body.appendChild(SaltoLinea.cloneNode(true));
+    fieldset.appendChild(SaltoLinea.cloneNode(true));
+    fieldset.appendChild(SaltoLinea.cloneNode(true));
+    fieldset.appendChild(SaltoLinea.cloneNode(true));
 
     //Fin de los Select
 
@@ -313,11 +332,11 @@ function cargarDOM(){
        var tagP5_content = document.createTextNode('Desea añadir información adicional: ');    
        element_p5.appendChild(tagP5_content);
        
-       document.body.appendChild(element_p5);
+       fieldset.appendChild(element_p5);
 
 
-       document.body.appendChild(SaltoLinea.cloneNode(true));
-       document.body.appendChild(SaltoLinea.cloneNode(true));
+       fieldset.appendChild(SaltoLinea.cloneNode(true));
+       fieldset.appendChild(SaltoLinea.cloneNode(true));
 
        //Declaramos variables
 
@@ -326,14 +345,14 @@ function cargarDOM(){
        var newTA1 = document.createElement('textarea');         
        newTA1.setAttribute("id", "observaciones_JS");
 
-       document.body.appendChild(newTA1);
+       fieldset.appendChild(newTA1);
 
        //Igual Que el Select, no lo reconoce HTML
 
 
-       document.body.appendChild(SaltoLinea.cloneNode(true));
-       document.body.appendChild(SaltoLinea.cloneNode(true));
-       document.body.appendChild(SaltoLinea.cloneNode(true));
+       fieldset.appendChild(SaltoLinea.cloneNode(true));
+       fieldset.appendChild(SaltoLinea.cloneNode(true));
+       fieldset.appendChild(SaltoLinea.cloneNode(true));
    
        //Fin de los TextArea
    
@@ -348,15 +367,15 @@ function cargarDOM(){
         newCheckBox5.setAttribute("type", "Checkbox");
         
         //Generamos los CheckBoxs2
-        document.body.appendChild(newCheckBox4);
-        document.body.appendChild(tagContent_Info1);
-        document.body.appendChild(SaltoLinea.cloneNode(true));
-        document.body.appendChild(SaltoLinea.cloneNode(true));
+        fieldset.appendChild(newCheckBox4);
+        fieldset.appendChild(tagContent_Info1);
+        fieldset.appendChild(SaltoLinea.cloneNode(true));
+        fieldset.appendChild(SaltoLinea.cloneNode(true));
 
-        document.body.appendChild(newCheckBox5);
-        document.body.appendChild(tagContent_Info2);
-        document.body.appendChild(SaltoLinea.cloneNode(true));
-        document.body.appendChild(SaltoLinea.cloneNode(true));
+        fieldset.appendChild(newCheckBox5);
+        fieldset.appendChild(tagContent_Info2);
+        fieldset.appendChild(SaltoLinea.cloneNode(true));
+        fieldset.appendChild(SaltoLinea.cloneNode(true));
         
         //Fin de los CheckBox2 @Miguel
 
@@ -366,7 +385,7 @@ function cargarDOM(){
         newBoton1.setAttribute("type", "submit");
         newBoton1.setAttribute("value", "submit");
 
-        document.body.appendChild(newBoton1);
+        fieldset.appendChild(newBoton1);
 
 }
 
