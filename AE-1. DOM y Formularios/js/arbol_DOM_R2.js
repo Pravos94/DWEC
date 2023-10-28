@@ -108,14 +108,17 @@ function cargarDOM_R2(){
     newRadio_Peq.setAttribute("type", "radio");
     newRadio_Peq.setAttribute("name", "r1");
     newRadio_Peq.setAttribute("value", 5);
+    newRadio_Peq.setAttribute("id", 'TamPeq');
 
     newRadio_Med.setAttribute("type", "radio");
     newRadio_Med.setAttribute("name", "r1");
     newRadio_Med.setAttribute("value", 10);
+    newRadio_Med.setAttribute("id", 'TamMed');
 
     newRadio_Gra.setAttribute("type", "radio");
     newRadio_Gra.setAttribute("name", "r1");
     newRadio_Gra.setAttribute("value", 15);
+    newRadio_Gra.setAttribute("id", 'TamGra');
 
     // generamos radio buttons
     fieldset.appendChild(newRadio_Peq);
@@ -152,12 +155,16 @@ function cargarDOM_R2(){
     var tagContent_CE = document.createTextNode(' Cebolla');
     newCheckBox1.setAttribute("type", "Checkbox");
     newCheckBox1.setAttribute("value", 1);
+    newCheckBox1.setAttribute("id", 'Ingrediente_Bacon');
     newCheckBox2.setAttribute("type", "Checkbox");
     newCheckBox2.setAttribute("value", 1);
+    newCheckBox2.setAttribute("id", 'Ingrediente_Pepperoni');
     newCheckBox3.setAttribute("type", "Checkbox");
     newCheckBox3.setAttribute("value", 1);
+    newCheckBox3.setAttribute("id", 'Ingrediente_Champiñon');
     newCheckBox4.setAttribute("type", "Checkbox");
     newCheckBox4.setAttribute("value", 1);
+    newCheckBox4.setAttribute("id", 'Ingrediente_Cebolla');
 
     //Generamos los CheckBoxs
     fieldset.appendChild(newCheckBox1);
@@ -184,11 +191,90 @@ function cargarDOM_R2(){
         var btnSubmit = document.createElement('input'); 
         btnSubmit.setAttribute("type", "submit");
         btnSubmit.setAttribute("value", "Procesar Pedido");
+        //btnSubmit.onclick(calcularPrecio);
+        btnSubmit.setAttribute("onclick", calcularPrecio);
 
         fieldset.appendChild(btnSubmit);
 
+        /*
+        function calcularPrecio(){
+            
+            var precio;
+    
+            If (document.getElementById('Ingrediente_Bacon').checked); {
+                precio = precio +1}
+                
+            If (document.getElementById("Ingrediente_Peperoni").checked); {
+                precio = precio +1}
+                
+            If (document.getElementById("Ingrediente_Champiñon").checked); {
+                precio = precio +1}
+                          
+            If (document.getElementById("TamPeq").checked); {
+                precio = precio +5}
+                
+            If (document.getElementById("TamMed").checked); {
+                precio = precio +10}
+                
+            If (document.getElementById("TamGra").checked); {
+                precio = precio +15}
+
+            var Contenido_Factura = document.createTextNode('Has Comprado una pizza por '+ precio +' €');
+            document.appendChild(SaltoLinea.cloneNode(true));
+            document.appendChild(SaltoLinea.cloneNode(true));
+            document.appendChild(SaltoLinea.cloneNode(true));
+
+            document.appendChild(Contenido_Factura);
+
+            console.log('Se realiza Compra');
+            console.log(Contenido_Factura);
+            console.log(precio);
+//-----------------------------------------------------------
+            var elDiv = document.getElementById("div_principal");
+            function muestraMensaje() {
+                console.log("Has pulsado el ratón");
+            }
+            alert("Pedido REalizado! " + Contenido_Factura );
+            elDiv.addEventListener("click", muestraMensaje);
+        //------------------------------------------------
+        }*/
+
 }
 
-function calcularPrecio(){
+/*
 
-}
+        function calcularPrecio(){
+            
+            var precio = integer;
+    
+            If (document.getElementById('Ingrediente_Bacon').checked); {
+                precio = precio +1}
+                
+            If (document.getElementById("Ingrediente_Peperoni").checked); {
+                precio = precio +1}
+                
+            If (document.getElementById("Ingrediente_Champiñon").checked); {
+                precio = precio +1}
+                          
+            If (document.getElementById("TamPeq").checked); {
+                precio = precio +5}
+                
+            If (document.getElementById("TamMed").checked); {
+                precio = precio +10}
+                
+            If (document.getElementById("TamGra").checked); {
+                precio = precio +15}
+
+            var Contenido_Factura = document.createTextNode('Has Comprado una pizza por '+ precio +' €');
+            document.appendChild(SaltoLinea.cloneNode(true));
+            document.appendChild(SaltoLinea.cloneNode(true));
+            document.appendChild(SaltoLinea.cloneNode(true));
+
+            document.appendChild(Contenido_Factura);
+
+            console.log('Se realiza Compra');
+            console.log(Contenido_Factura);
+            console.log(precio);
+        
+        }
+*/
