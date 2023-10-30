@@ -191,17 +191,31 @@ function cargarDOM_R2(){
         var btnSubmit = document.createElement('input'); 
         btnSubmit.setAttribute("type", "submit");
         btnSubmit.setAttribute("value", "Procesar Pedido");
-        //btnSubmit.onclick(calcularPrecio);
+        // btnSubmit.onclick=calcularPrecio;
+
         //btnSubmit.setAttribute("onclick", calcularPrecio);
+        console.log ("se ha generado boton");
 
         fieldset.appendChild(btnSubmit);
 
-        /*
-        function calcularPrecio(){
+        formulario.addEventListener("submit", function(evento) {
+            evento.preventDefault(); // con este método el form no se envia solo
+
+            if ($('input[type=checkbox]:checked').length === 0) {
+                e.preventDefault();
+                alert('Debe seleccionar al menos un valor');
+            }else {
+                alert("Formulario enviado");
+            }
+        })
+        
+        
+        
+        function calcularPrecio(elDiv){
             
             var precio;
-    
-            If (document.getElementById('Ingrediente_Bacon').checked); {
+    /*
+            If (document.getElementById(newCheckBox1.getAttribute, id ="Ingrediente_Bacon").checked); {
                 precio = precio +1}
                 
             If (document.getElementById("Ingrediente_Peperoni").checked); {
@@ -218,14 +232,14 @@ function cargarDOM_R2(){
                 
             If (document.getElementById("TamGra").checked); {
                 precio = precio +15}
-
+*/
             var Contenido_Factura = document.createTextNode('Has Comprado una pizza por '+ precio +' €');
             document.appendChild(SaltoLinea.cloneNode(true));
             document.appendChild(SaltoLinea.cloneNode(true));
             document.appendChild(SaltoLinea.cloneNode(true));
-
+S
             document.appendChild(Contenido_Factura);
-
+            alert (Contenido_Factura);
             console.log('Se realiza Compra');
             console.log(Contenido_Factura);
             console.log(precio);
@@ -237,7 +251,7 @@ function cargarDOM_R2(){
             alert("Pedido REalizado! " + Contenido_Factura );
             elDiv.addEventListener("click", muestraMensaje);
         //------------------------------------------------
-        }*/
+        }
 
 }
 
