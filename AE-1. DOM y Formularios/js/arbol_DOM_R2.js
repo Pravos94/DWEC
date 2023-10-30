@@ -191,11 +191,25 @@ function cargarDOM_R2(){
         var btnSubmit = document.createElement('input'); 
         btnSubmit.setAttribute("type", "submit");
         btnSubmit.setAttribute("value", "Procesar Pedido");
-        btnSubmit.onclick=calcularPrecio;
+        // btnSubmit.onclick=calcularPrecio;
+
         //btnSubmit.setAttribute("onclick", calcularPrecio);
         console.log ("se ha generado boton");
 
         fieldset.appendChild(btnSubmit);
+
+        formulario.addEventListener("submit", function(evento) {
+            evento.preventDefault(); // con este método el form no se envia solo
+
+            if ($('input[type=checkbox]:checked').length === 0) {
+                e.preventDefault();
+                alert('Debe seleccionar al menos un valor');
+            }else {
+                alert("Formulario enviado");
+            }
+        })
+        
+        
         
         function calcularPrecio(elDiv){
             
