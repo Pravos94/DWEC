@@ -223,7 +223,7 @@ function cargarDOM_R2(){
             document.appendChild(SaltoLinea.cloneNode(true));
             document.appendChild(SaltoLinea.cloneNode(true));
             document.appendChild(SaltoLinea.cloneNode(true));
-
+S
             document.appendChild(Contenido_Factura);
             alert (Contenido_Factura);
             console.log('Se realiza Compra');
