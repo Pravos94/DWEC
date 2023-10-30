@@ -192,7 +192,7 @@ function cargarDOM_R2(){
         btnSubmit.setAttribute("type", "submit");
         btnSubmit.setAttribute("value", "Procesar Pedido");
         //btnSubmit.onclick(calcularPrecio);
-        btnSubmit.setAttribute("onclick", calcularPrecio);
+        //btnSubmit.setAttribute("onclick", calcularPrecio);
 
         fieldset.appendChild(btnSubmit);
 
