@@ -1,0 +1,119 @@
+<!–
+Requerimiento 1
+
+Se quiere generar una página web completamente por JavaScript, modificando el árbol DOM. 
+La página web solo tendrá un contenedor (DIV) y sobre dicho contenedor y 
+por medio de JavaScript se añadirán elementos a dicho contenedor. 
+La temática de la web se deja libre al alumno. No es necesario usar CSS. 
+
+Se valorará usar funciones propias de modificación del árbol DOM y no usar innerHTML.
+
+Se añadirá al menos los siguientes elementos HTML a un formulario
+
+-Campos de texto donde poner el DNI, el nombre y los apellidos, la dirección y el teléfono.
+-Dos radio button, con 4 opciones a elegir
+-Cinco checkbox diferentes
+-2 imágenes
+-Un campo select
+-Un text area
+
+Valoración: 5 puntos sobre 10
+–>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<title>AE-1 - Banco</title>
+
+	<script type="text/javascript" src="js/arbol_DOM.js"></script>
+</head>
+
+<body onload="cargarDOM()">
+	
+	<div id="div1">
+		<!-- <form name="myForm" action="js/arbol_DOM.js" onsubmit="return validateForm()" method="post">
+			<table>
+			<tr>
+				<td>Nombre: <input type="text" name="fName"> <br>
+			<br>
+			Apellidos: <input type="text" name="fSurname"> <br>
+			<br>
+			DNI: <input type="text" name="fDni"> <br>
+			<br>
+			Dirección: <input type="text" name="fAddress"> <br>
+			<br>
+			Teléfono: <input type="number" name="fTel"> <br>
+			<br>
+			<br><br>
+				</td>
+				<td>
+			Tipo de cuenta:
+			<br><br>
+			<input type="radio" value="Cuenta Joven" name="Tipo de Cuenta" id="Cuenta1" />Cuenta Joven 
+			<br><br>
+			<input type="radio" value="Cuenta Adulto" name="Tipo de Cuenta" id="Cuenta1" />Cuenta Adulto
+			<br><br>
+			<input type="radio" value="Cuenta Empresarial" name="Tipo de Cuenta" id="Cuenta1" />Cuenta Jubileta
+			<br><br>
+			<input type="radio" value="Cuenta Jubileta" name="Tipo de Cuenta" id="Cuenta1" />Cuenta Empresarial
+			<br><br>
+				</td>
+			</tr>
+		</table>
+			<br><br>
+			Qué entidad bancaria desea:
+
+			<br><br>
+
+			<input type="radio" value="Orange" name="Banco Elegido" id="Banco1" /> ING
+			<input type="radio" value="Blue" name="Banco Elegido" id="Banco2" /> CaixaBank
+			<input type="radio" value="Red" name="Banco Elegido" id="Banco3" /> Santander
+			<input type="radio" value="Green"  	name="Banco Elegido"	id="Banco4"/> Caja Rural
+			
+
+			<br><br><br>
+			
+			¿Qué tarjetas necesitarías?:
+			<br><br>
+			<input type="checkbox" value="Tarjeta" name="Tarjeta Prepago" id="Banco3" />Tarjeta de Prepago
+			<br>
+			<input type="checkbox" value="Tarjeta2" name="Tarjeta Credito" id="Banco4"/>Tarjeta de Crédito
+			<br>
+			<input type="checkbox" value="Tarjeta3" name="Tarjeta Debito" id="Banco3" />Tarjeta de Debito
+			<br><br>
+
+			Metodo de pago de su tarjeta 
+			<select id="MetodoPago" name="Tipo de pago">
+				<option value="0">Diario</option>
+				<option value="1">Mensual</option>
+				<option value="2">Trimestral</option>
+				<option value="3">Quincenal</option>	
+				<option value="4">Anual</option>
+			</select>
+			<br>
+			<br>
+
+
+			Desea añadir alguna información más:
+			<br>
+			<textarea id="observaciones"></textarea>
+			<br><br>
+
+			<input type="checkbox" value="Informacion1">He leído y acepto las condiciones de privacidad
+			<br>
+			<input type="checkbox" value="Informacion2"/>Soy mayor de edad
+			<br>
+
+			<h1>---------------------------Todo Lo demas abajo generado por DOM--------------------------------------</h1>
+			
+		</form>	
+
+		<input type="submit" value="Submit">  -->
+	</div>
+
+</body>
+</html>
