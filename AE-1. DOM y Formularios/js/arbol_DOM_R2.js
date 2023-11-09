@@ -31,6 +31,7 @@ function cargarDOM_R2(){
 
     formulario.setAttribute('method', "post"); //Asignar el atributo method
     formulario.setAttribute('action', ""); //Asignar el atributo action');
+    formulario.setAttribute('id', "miformulario"); //Asignar el atributo action');
 
     //Declaro las variables de los primeros cuadros y los textos a usar
     var newNombre = document.createElement('input', id="fNombre");    
@@ -63,7 +64,7 @@ function cargarDOM_R2(){
     fieldset.appendChild(newNombre);
     fieldset.appendChild(SaltoLinea.cloneNode(true));
     fieldset.appendChild(SaltoLinea.cloneNode(true));
-    console.log("se ha generado casilla Nombre")
+    // console.log("se ha generado casilla Nombre")
 
     //Generamos la Direccion
     fieldset.appendChild(tagContent_Direccion);
@@ -71,7 +72,7 @@ function cargarDOM_R2(){
     fieldset.appendChild(icon_Casa);
     fieldset.appendChild(SaltoLinea.cloneNode(true));
     fieldset.appendChild(SaltoLinea.cloneNode(true));
-    console.log("se ha generado casilla Direccion")
+    // console.log("se ha generado casilla Direccion")
 
     //Generamos el Telefono
     fieldset.appendChild(tagContent_Telef);
@@ -79,14 +80,14 @@ function cargarDOM_R2(){
     fieldset.appendChild(icon_Telef);
     fieldset.appendChild(SaltoLinea.cloneNode(true));
     fieldset.appendChild(SaltoLinea.cloneNode(true));
-    console.log("se ha generado casilla Telefono");
+    // console.log("se ha generado casilla Telefono");
    
     //Generamos el Email
     fieldset.appendChild(tagContent_Email);
     fieldset.appendChild(newEmail);
     fieldset.appendChild(SaltoLinea.cloneNode(true));
     fieldset.appendChild(SaltoLinea.cloneNode(true));
-    console.log("se ha generado casilla Email");
+    // console.log("se ha generado casilla Email");
 
     /*Fin de Cuadros de texto*/
     
@@ -200,95 +201,40 @@ function cargarDOM_R2(){
 
         formulario.addEventListener("submit", function(evento) {
             evento.preventDefault(); // con este método el form no se envia solo
+            
+            var inputs = formulario.querySelectorAll('input');
 
-            if ($('input[type=checkbox]:checked').length === 0) {
-                e.preventDefault();
-                alert('Debe seleccionar al menos un valor');
-            }else {
-                alert("Formulario enviado");
-            }
+            console.log("formulario" ,  formulario);
+
+            calcularPrecio(inputs);
+
         })
         
         
         
-        function calcularPrecio(elDiv){
+        function calcularPrecio(inputs){
+
+            let precioTotal = 0;
+            inputs.forEach(element => {
+                console.log("element name:"+element.name+"/valor:"+element.value);
+                
+                if((element.name == 'r1' || element.type == 'checkbox') && element.checked) {
+                     console.log(" valor: "+element.value);
+ 
+                     precioTotal += parseInt(element.value); // sumamos precio del producto marcado
+                }
+ 
+             });
+
+            var printFactura = document.createElement('p');
+            var Contenido_Factura = document.createTextNode('Has Comprado una pizza por '+ precioTotal +' €');            
             
-            var precio;
-    /*
-            If (document.getElementById(newCheckBox1.getAttribute, id ="Ingrediente_Bacon").checked); {
-                precio = precio +1}
-                
-            If (document.getElementById("Ingrediente_Peperoni").checked); {
-                precio = precio +1}
-                
-            If (document.getElementById("Ingrediente_Champiñon").checked); {
-                precio = precio +1}
-                          
-            If (document.getElementById("TamPeq").checked); {
-                precio = precio +5}
-                
-            If (document.getElementById("TamMed").checked); {
-                precio = precio +10}
-                
-            If (document.getElementById("TamGra").checked); {
-                precio = precio +15}
-*/
-            var Contenido_Factura = document.createTextNode('Has Comprado una pizza por '+ precio +' €');
-            document.appendChild(SaltoLinea.cloneNode(true));
-            document.appendChild(SaltoLinea.cloneNode(true));
-            document.appendChild(SaltoLinea.cloneNode(true));
-S
-            document.appendChild(Contenido_Factura);
-            alert (Contenido_Factura);
+            printFactura.appendChild(Contenido_Factura);
+
+            document.body.appendChild(printFactura);
             console.log('Se realiza Compra');
             console.log(Contenido_Factura);
-            console.log(precio);
-//-----------------------------------------------------------
-            var elDiv = document.getElementById("div_principal");
-            function muestraMensaje() {
-                console.log("Has pulsado el ratón");
-            }
-            alert("Pedido REalizado! " + Contenido_Factura );
-            elDiv.addEventListener("click", muestraMensaje);
-        //------------------------------------------------
+
         }
 
 }
-
-/*
-
-        function calcularPrecio(){
-            
-            var precio = integer;
-    
-            If (document.getElementById('Ingrediente_Bacon').checked); {
-                precio = precio +1}
-                
-            If (document.getElementById("Ingrediente_Peperoni").checked); {
-                precio = precio +1}
-                
-            If (document.getElementById("Ingrediente_Champiñon").checked); {
-                precio = precio +1}
-                          
-            If (document.getElementById("TamPeq").checked); {
-                precio = precio +5}
-                
-            If (document.getElementById("TamMed").checked); {
-                precio = precio +10}
-                
-            If (document.getElementById("TamGra").checked); {
-                precio = precio +15}
-
-            var Contenido_Factura = document.createTextNode('Has Comprado una pizza por '+ precio +' €');
-            document.appendChild(SaltoLinea.cloneNode(true));
-            document.appendChild(SaltoLinea.cloneNode(true));
-            document.appendChild(SaltoLinea.cloneNode(true));
-
-            document.appendChild(Contenido_Factura);
-
-            console.log('Se realiza Compra');
-            console.log(Contenido_Factura);
-            console.log(precio);
-        
-        }
-*/
