@@ -30,36 +30,35 @@ Valoración: 7 puntos sobre 10
 </head>
 
 <body>
-
+	<h3>Bienvenidos a su Pizzería Mayor</h3>
 	<div id="div1">
-		<h3>Bienvenidos a su Pizzería Mayor</h3>
-		<div id="div1">
-			<form method="post" action="">
-				<fieldset>
-					<legend>Debe rellenar el siguiente formulario para dar de alta su pedido: </legend>
+		<form method="post" action="">
+			<fieldset>
+				<legend>Debe rellenar el siguiente formulario para dar de alta su pedido: </legend>
 
-					Nombre: <input id="nombre" autofocus required>
-					<br><br>
-					Dirección: <input id="direccion" required>
-					<img src="../img/casa.gif" alt="Icono Casa" style="width:16px;height:16px">
-					<br><br>
-					Teléfono: <input id="telefono" type="Number" required>
-					<img src="../img/llamada.png" alt="Icono Llamada">
-					<br><br>
-					Email: <input id="email" required>
-					<br><br>
+				Nombre: <input id="nombre" autofocus required>
+				<br><br>
+				Dirección: <input id="direccion" required>
+				<img src="../img/casa.gif" alt="Icono Casa" style="width:16px;height:16px">
+				<br><br>
+				Teléfono: <input id="telefono" type="Number" required>
+				<img src="../img/llamada.png" alt="Icono Llamada">
+				<br><br>
+				Email: <input id="email" required>
+				<br><br>
 
-					<p>Elija tamaño de Pizza:
-					</p>
-					<input type="radio" name="r1" value="5" id="tamPeq" required> Pequeña
-					<input type="radio" name="r1" value="10" id="tamMed" required> Mediana
-					<input type="radio" name="r1" value="15" id="tamGra" required> Grande
-					<br>
-					<br>
+				<p>Elija tamaño de Pizza:
+				</p>
+				<div id="divTamaños">
+					<!-- <input type="radio" name="r1" value="5" id="tamPeq" required> Pequeña
+					<input type="radio" name="r1" value="10" id="tamMed" required checked> Mediana
+					<input type="radio" name="r1" value="15" id="tamGra" required> Grande -->
+				</div>
+				<br>
 
-					<p>¿Qué ingredientes ponemos?
-
-					</p>
+				<p>¿Qué ingredientes ponemos?
+				</p>
+				<div id="divIngredientes">
 					<input type="Checkbox" value="1" id="ingBacon"> Bacon Crispy
 					<br>
 					<input type="Checkbox" value="1" id="ingPepperoni"> Pepperoni
@@ -67,17 +66,14 @@ Valoración: 7 puntos sobre 10
 					<input type="Checkbox" value="1" id="ingChampiñon"> Champiñón
 					<br>
 					<input type="Checkbox" value="1" id="ingCebolla"> Cebolla
-					<br>
-					<br>
-					<input type="submit" value="Procesar Pedido">
+				</div>
+				<br>
+				<br>
+				<input type="submit" value="Procesar Pedido">
 
-				</fieldset>
-			</form>
-		</div>
-</body>
-
-</html>
-</div>
+			</fieldset>
+		</form>
+	</div>
 </body>
 
 </html>
