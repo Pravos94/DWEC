@@ -1,0 +1,86 @@
+<!-- 
+Requerimiento 1
+
+Se pide hacer una aplicación AJAX que gestione una pizzería como la actividad 1. 
+Puedes basarte en dicha actividad para reutilizar lo que consideres o para hacerte 
+una idea de lo que tienes que implementar junto a tu compañero. 
+El formulario que tendremos que usar será el mismo que en dicha actividad, 
+consúltala para más información.
+
+La idea es simular un entorno de acceso a servidor para traer toda la información que se necesite para cargar la página. La página cargará parte de los datos de manera dinámica, concretamente los tamaños y los ingredientes. Dichos datos estarán en formato JSON, por lo que habrá que tratarlos en el cliente para poder mostrarlos.
+
+Nada más terminar de cargar la página, se accederá mediante AJAX a datos en un fichero del servidor para traer los tamaños de las pizzas y cargarlos dinámicamente. Al mismo tiempo, nos traeremos los ingredientes que tenemos disponibles para mostrarlos en nuestra pizzería.
+
+También dispondremos de un botón de refrescar, de tal manera que cuando lo pulsemos haremos una llamada de nuevo a nuestro servidor para traernos los posibles cambios de los datos de nuestra aplicación.
+
+Valoración: 7 puntos sobre 10 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>AE-1 - Banco</title>
+
+	<script type="text/javascript" src="js/arbol_DOM.js"></script>
+</head>
+
+<body onload="cargarDOM()">
+
+	<div id="div1">
+		<h3>Bienvenidos a su Pizzería Mayor</h3>
+		<div id="div1">
+			<form method="post" action="http://127.0.0.1:5500/AE-1.%20DOM%20y%20Formularios/Requerimiento_2.html">
+				<fieldset>
+					<legend>Debe rellenar el siguiente formulario para dar de alta su pedido: </legend>
+					Nombre: <input autofocus="" required="">
+					<br><br>
+					Dirección: <input required="">
+					<img src="../img/casa.gif" alt="Icono Casa" style="width:16px;height:16px">
+					<br>
+					<br>Teléfono:
+					<input required="" type="Number">
+					<img src="../img/AE-1 - Pizzería_files/llamada.png" alt="Icono Llamada">
+					<br>
+					<br>Email:
+					<input required="">
+					<br>
+					<br>
+
+					<p>Elija tamaño de Pizza:
+					</p>
+					<input type="radio" name="r1" value="5" id="TamPeq" required="">
+					Pequeña
+					<input type="radio" name="r1" value="10" id="TamMed" required=""> Mediana
+					<input type="radio" name="r1" value="15" id="TamGra" required=""> Grande
+					<br>
+					<br>
+
+					<p>¿Qué ingredientes ponemos?
+
+					</p>
+					<input type="Checkbox" value="1" id="Ingrediente_Bacon"> Bacon Crispy
+					<br>
+					<input type="Checkbox" value="1" id="Ingrediente_Pepperoni"> Pepperoni
+					<br>
+					<input type="Checkbox" value="1" id="Ingrediente_Champiñon"> Champiñón
+					<br>
+					<input type="Checkbox" value="1" id="Ingrediente_Cebolla"> Cebolla
+					<br>
+					<br>
+					<input type="submit" value="Procesar Pedido">
+
+				</fieldset>
+			</form>
+		</div>
+</body>
+
+</html>
+</div>
+</body>
+
+</html>
