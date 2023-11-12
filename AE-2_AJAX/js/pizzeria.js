@@ -6,62 +6,131 @@ window.onload = function () { // usamos este evento que se desencadena tras pint
 
     cargarDatosJson()
 
-    function cargarDatosJson() {
+    validaciones()
 
-        let xmlHttp = new XMLHttpRequest() // creamos la conexión HTTP
+}
 
-        xmlHttp.open('GET', URL_DESTINO + RECURSO, true) // true lo hace Asíncrono
-        xmlHttp.send() // al ser GET puede ir sin nada o con valor NULL
+function cargarDatosJson() {
 
-        xmlHttp.onload = function () { // solo salta al finalizar la respuesta del SERVER
+    let xmlHttp = new XMLHttpRequest() // creamos la conexión HTTP
 
-            console.log("Json de datos de la Pizzeria", this.responseText)
+    xmlHttp.open('GET', URL_DESTINO + RECURSO, true) // true lo hace Asíncrono
+    xmlHttp.send() // al ser GET puede ir sin nada o con valor NULL
 
-            rellenarFormulario(this.responseText)
+    xmlHttp.onload = function () { // solo salta al finalizar la respuesta del SERVER
 
-        }
-    }
+        console.log("Json de datos de la Pizzeria", this.responseText)
 
-    function rellenarFormulario(responseText) {
-
-        let datosPizzeria = JSON.parse(responseText) // convierte el texto a JSON
-
-        console.log("Json de datos de la Pizzeria", datosPizzeria)
-
-        let tamañosPizza = datosPizzeria.tamaños
-
-        console.log("Json de datos de los tamaños", tamañosPizza)
-
-        let precioTam = 0
-
-        for (let tamaño of tamañosPizza) {
-
-            precioTam += 5
-
-            var eRadio = document.createElement('input');
-            var eLabel = document.createElement('label')
-            var txtRadio = document.createTextNode(tamaño);
-            var txtLabel = document.createTextNode(tamaño);
-
-
-            eRadio.setAttribute("type", "radio");
-            eRadio.setAttribute("name", "r1");
-            eRadio.setAttribute("value", precioTam);
-            eRadio.setAttribute("id", tamaño.length > 3 ? tamaño.substring(0, 4) : tamaño);
-
-            eLabel.appendChild(txtLabel)
-            eRadio.appendChild(txtRadio);
-            eRadio.required = true;
-            eRadio.checked = true;
-
-            divTamaños.appendChild(eRadio);
-            divTamaños.appendChild(eLabel);
-
-        }
-
-        let ingredientes = datosPizzeria.ingredientes
-
-        console.log("Json de datos de los ingredientes", ingredientes)
+        rellenarFormulario(this.responseText)
 
     }
+}
+
+function rellenarFormulario(responseText) {
+
+    let datosPizzeria = JSON.parse(responseText) // convierte el texto a JSON
+
+    console.log("Json de datos de la Pizzeria", datosPizzeria)
+
+    let tamañosPizza = datosPizzeria.tamaños
+
+    rellenarTamaños(tamañosPizza)
+
+    let ingredientes = datosPizzeria.ingredientes
+
+    rellenarIngredientes(ingredientes)
+
+}
+
+function rellenarTamaños(tamañosPizza) {
+
+    console.log("Json de datos de los tamaños", tamañosPizza)
+
+    let precioTam = 0
+
+    for (let tamaño of tamañosPizza) {
+
+        precioTam += 5
+
+        var eCheckbox = document.createElement('input');
+        var eLabel = document.createElement('label')
+        var txtCheckbox = document.createTextNode(tamaño);
+        var txtLabel = document.createTextNode(tamaño);
+
+
+        eCheckbox.setAttribute("type", "radio");
+        eCheckbox.setAttribute("name", "r1");
+        eCheckbox.setAttribute("value", precioTam);
+        eCheckbox.setAttribute("id", tamaño.length > 3 ? tamaño.substring(0, 4) : tamaño);
+
+        eLabel.appendChild(txtLabel)
+        eCheckbox.appendChild(txtCheckbox);
+        eCheckbox.required = true;
+        eCheckbox.checked = true;
+
+        divTamaños.appendChild(eCheckbox);
+        divTamaños.appendChild(eLabel);
+
+    }
+
+}
+
+function rellenarIngredientes(ingredientes) {
+
+    console.log("Json de datos de los ingredientes", ingredientes)
+
+    for (let ingr of ingredientes) {
+
+        var eCheckbox = document.createElement('input');
+        var eLabel = document.createElement('label')
+        var txtCheckbox = document.createTextNode(ingr);
+        var txtLabel = document.createTextNode(ingr);
+
+        var SaltoLinea = document.createElement('br');
+
+
+        eCheckbox.setAttribute("type", "Checkbox");
+        eCheckbox.setAttribute("value", 1);
+        eCheckbox.setAttribute("id", ingr.length > 3 ? 'ing' + ingr.substring(0, 4) : 'ing' + ingr);
+
+        eLabel.appendChild(txtLabel)
+        eCheckbox.appendChild(txtCheckbox);
+
+        divIngredientes.appendChild(eCheckbox);
+        divIngredientes.appendChild(eLabel);
+        divIngredientes.appendChild(SaltoLinea);
+
+    }
+}
+
+
+function validaciones(evento) {
+
+    console.log('myForm', myForm);
+
+    let elements = myForm.childNodes
+
+    console.log('elements', elements)
+
+    myForm.addEventListener("submit", function (evento) {
+        myForm.preventDefault();
+
+        alert('entro')
+
+        console.log('es un evento', evento)
+        // validaciones(evento)
+
+    })
+
+    validaEmail(evento)
+
+    validaIngredientes(evento)
+}
+
+function validaEmail() {
+
+}
+
+function validaIngredientes() {
+
 }
