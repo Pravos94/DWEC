@@ -7,6 +7,9 @@ const RECURSO = "datosPizzeria.json"
 window.onload = function () { // usamos este evento que se desencadena tras pintarse todo el html
 
     cargarDatosJson();
+
+    asignarEventos();
+
 }
 
 function cargarDatosJson() {
@@ -114,26 +117,48 @@ function rellenarIngredientes(ingredientes) {
     }
 }
 
+function asignarEventos() {
 
+    btnEnviar.addEventListener("click", validaciones)
+    email.addEventListener("blur", validaEmail)
 
-function validaciones(evento) {
-
-    validaEmail(evento)
-
-    validaIngredientes(evento)
 }
 
-function validaEmail(event) {
+function validaciones() {
+
+    validaEmail()
+
+    validaIngredientes()
+}
+
+function validaEmail() {
     const validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
     var campoEmail = document.getElementById("email");
     if (campoEmail.value.match(validRegex)) {
-        alert("email valido")
+        if (eErrEmail != null) {
+            // eErrEmail.parentElement.removeChild(eErrEmail)
+            eErrEmail.textContent = '';
+        }
     } else {
-        alert("email no es valido")
+        eErrEmail.textContent = 'Email no válido';
+
+        //eErrEmail.setAttribute('id', 'eErrEmail')
+        eErrEmail.setAttribute('style', 'color:red')
+
+        // eErrEmail.appendChild(txtErrEmail)
+
+        // campoEmail.appendChild(eErrEmail);
+
     }
 }
 
-function validaIngredientes(event) {
+function validaIngredientes() {
+
+    var checks = document.childNodes.item('input')
+    var checksIngr = divIngredientes.childNodes
+
+    console.log("ingredientes", checksIngr)
+
     if (tamaños.eCheckbox = true(preciofinal)) {
         preciofinal = preciofinal + tamaños.value(precioTam);
 
