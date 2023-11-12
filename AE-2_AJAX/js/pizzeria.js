@@ -1,13 +1,10 @@
 
-const URL_DESTINO = "http://localhost:5500/AE-2_AJAX/"
+const URL_DESTINO = "http://localhost:5500/DWEC/AE-2_AJAX/"
 const RECURSO = "datosPizzeria.json"
 
 window.onload = function () { // usamos este evento que se desencadena tras pintarse todo el html
 
-    cargarDatosJson()
-
-    validaciones()
-
+    cargarDatosJson();
 }
 
 function cargarDatosJson() {
@@ -15,7 +12,12 @@ function cargarDatosJson() {
     let xmlHttp = new XMLHttpRequest() // creamos la conexión HTTP
 
     xmlHttp.open('GET', URL_DESTINO + RECURSO, true) // true lo hace Asíncrono
-    xmlHttp.send() // al ser GET puede ir sin nada o con valor NULL
+    try {
+        xmlHttp.send() // al ser GET puede ir sin nada o con valor NULL
+    } catch (error){
+        console.log("mierroreseste: ", error)
+    }
+    
 
     xmlHttp.onload = function () { // solo salta al finalizar la respuesta del SERVER
 
@@ -27,7 +29,6 @@ function cargarDatosJson() {
 }
 
 function rellenarFormulario(responseText) {
-
     let datosPizzeria = JSON.parse(responseText) // convierte el texto a JSON
 
     console.log("Json de datos de la Pizzeria", datosPizzeria)
@@ -56,8 +57,12 @@ function rellenarTamaños(tamañosPizza) {
         var eLabel = document.createElement('label')
         var txtCheckbox = document.createTextNode(tamaño);
         var txtLabel = document.createTextNode(tamaño);
-
-
+        /*var ePizza = document.createElement(Image);
+        var imagen = new Image();
+        imagen.onload = imagenCargada;
+        imagen.src = "img/pizza.png";
+        */
+        
         eCheckbox.setAttribute("type", "radio");
         eCheckbox.setAttribute("name", "r1");
         eCheckbox.setAttribute("value", precioTam);
@@ -70,6 +75,7 @@ function rellenarTamaños(tamañosPizza) {
 
         divTamaños.appendChild(eCheckbox);
         divTamaños.appendChild(eLabel);
+        //divTamaños.appendChild(ePizza);
 
     }
 
@@ -104,23 +110,8 @@ function rellenarIngredientes(ingredientes) {
 }
 
 
+
 function validaciones(evento) {
-
-    console.log('myForm', myForm);
-
-    let elements = myForm.childNodes
-
-    console.log('elements', elements)
-
-    myForm.addEventListener("submit", function (evento) {
-        myForm.preventDefault();
-
-        alert('entro')
-
-        console.log('es un evento', evento)
-        // validaciones(evento)
-
-    })
 
     validaEmail(evento)
 
@@ -128,9 +119,20 @@ function validaciones(evento) {
 }
 
 function validaEmail() {
-
+    var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    var campoEmail = document.getElementById("email");
+    if(campoEmail.value.match(validRegex)){
+        alert("email valido")
+    } else {
+        alert("email no es valido")
+    }
 }
 
 function validaIngredientes() {
+    if (tamaños.eCheckbox = true (preciofinal)){
+        preciofinal = preciofinal + tamaños.value(precioTam);
+        
+        alert("Su pedido es: "+ preciofinal)
+    }
 
 }
