@@ -1,5 +1,7 @@
 
-const URL_DESTINO = "http://localhost:5500/DWEC/AE-2_AJAX/"
+// const URL_DESTINO = "http://localhost:5500/DWEC/AE-2_AJAX/" 
+const URL_DESTINO = "http://localhost:5500/AE-2_AJAX/"
+
 const RECURSO = "datosPizzeria.json"
 
 window.onload = function () { // usamos este evento que se desencadena tras pintarse todo el html
@@ -14,10 +16,10 @@ function cargarDatosJson() {
     xmlHttp.open('GET', URL_DESTINO + RECURSO, true) // true lo hace Asíncrono
     try {
         xmlHttp.send() // al ser GET puede ir sin nada o con valor NULL
-    } catch (error){
+    } catch (error) {
         console.log("mierroreseste: ", error)
     }
-    
+
 
     xmlHttp.onload = function () { // solo salta al finalizar la respuesta del SERVER
 
@@ -48,21 +50,24 @@ function rellenarTamaños(tamañosPizza) {
     console.log("Json de datos de los tamaños", tamañosPizza)
 
     let precioTam = 0
+    let tamPizzaImg = 0;
 
     for (let tamaño of tamañosPizza) {
 
+        tamPizzaImg += 32;
         precioTam += 5
 
         var eCheckbox = document.createElement('input');
         var eLabel = document.createElement('label')
         var txtCheckbox = document.createTextNode(tamaño);
         var txtLabel = document.createTextNode(tamaño);
-        /*var ePizza = document.createElement(Image);
-        var imagen = new Image();
-        imagen.onload = imagenCargada;
-        imagen.src = "img/pizza.png";
-        */
-        
+
+        var ePizza = document.createElement('img');
+        ePizza.setAttribute('src', "../img/pizza.png")
+        ePizza.setAttribute('alt', "Icono Pizza " + tamaño)
+        ePizza.setAttribute('style', 'width:' + tamPizzaImg + 'px;height:' + tamPizzaImg + 'px')
+
+
         eCheckbox.setAttribute("type", "radio");
         eCheckbox.setAttribute("name", "r1");
         eCheckbox.setAttribute("value", precioTam);
@@ -75,7 +80,7 @@ function rellenarTamaños(tamañosPizza) {
 
         divTamaños.appendChild(eCheckbox);
         divTamaños.appendChild(eLabel);
-        //divTamaños.appendChild(ePizza);
+        divTamaños.appendChild(ePizza);
 
     }
 
@@ -118,21 +123,21 @@ function validaciones(evento) {
     validaIngredientes(evento)
 }
 
-function validaEmail() {
-    var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+function validaEmail(event) {
+    const validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
     var campoEmail = document.getElementById("email");
-    if(campoEmail.value.match(validRegex)){
+    if (campoEmail.value.match(validRegex)) {
         alert("email valido")
     } else {
         alert("email no es valido")
     }
 }
 
-function validaIngredientes() {
-    if (tamaños.eCheckbox = true (preciofinal)){
+function validaIngredientes(event) {
+    if (tamaños.eCheckbox = true(preciofinal)) {
         preciofinal = preciofinal + tamaños.value(precioTam);
-        
-        alert("Su pedido es: "+ preciofinal)
+
+        alert("Su pedido es: " + preciofinal)
     }
 
 }
