@@ -30,17 +30,17 @@ function cargarDatosJson() {
 }
 
 function rellenarFormulario(responseText) {
-    let datosPizzeria = JSON.parse(responseText) // convierte el texto a JSON
+    var datosPizzeria = JSON.parse(responseText) // convierte el texto a JSON
 
     console.log("Json de datos de la Pizzeria", datosPizzeria)
 
-    let tamañosPizza = datosPizzeria.tamaños
+    var tamañosPizza = datosPizzeria.tamaños
 
     rellenarTamaños(tamañosPizza)
 
-    let ingredientes = datosPizzeria.ingredientes
+    var ingredientes = datosPizzeria.ingredientes
 
-    // rellenarIngredientes(ingredientes)
+    rellenarIngredientes(ingredientes)
 
 }
 
@@ -48,7 +48,7 @@ function rellenarTamaños(tamañosPizza) {
 
     console.log("Json de datos de los tamaños", tamañosPizza)
 
-    let tamPizzaImg = 0;
+    var tamPizzaImg = 0;
 
     for (let tamaño in tamañosPizza) {
 
@@ -95,19 +95,19 @@ function rellenarIngredientes(ingredientes) {
     console.log("Json de datos de los ingredientes", ingredientes)
 
     for (let ingr in ingredientes) {
-
-        if (tamañosPizza.hasOwnProperty(ingr)) {
+        if (ingredientes.hasOwnProperty(ingr)) {
 
             var eCheckbox = document.createElement('input');
             var eLabel = document.createElement('label')
             var txtCheckbox = document.createTextNode(ingr);
             var txtLabel = document.createTextNode(ingr);
+            var valueLabel = new Number(ingredientes[ingr])
 
             var SaltoLinea = document.createElement('br');
 
 
             eCheckbox.setAttribute("type", "Checkbox");
-            eCheckbox.setAttribute("value", 1);
+            eCheckbox.setAttribute("value", valueLabel);
             eCheckbox.setAttribute("id", ingr.length > 3 ? 'ing' + ingr.substring(0, 4) : 'ing' + ingr);
 
             eLabel.appendChild(txtLabel)
@@ -125,15 +125,23 @@ function rellenarIngredientes(ingredientes) {
 }
 
 function asignarEventos() {
-
+    var email = document.getElementById("email")
+    var btnEnviar = document.getElementById("btnEnviar")
+    var btnActualizar = document.getElementById("btnActualizar")
+    
     email.addEventListener("blur", validaEmail)
     btnEnviar.addEventListener("click", validaciones)
-    btnActualizar.addEventListener("click", cargarDatosJson)
+    btnActualizar.addEventListener("click", funcionRecargaDatos)
 
 }
 
-function validaciones() {
+function funcionRecargaDatos() {
+    location.reload()
+}
 
+function validaciones(e) {
+    e.preventDefault()
+    e.stopPropagation()
     validaEmail()
 
     validaIngredientes()
@@ -160,50 +168,51 @@ function validaEmail() {
     }
 }
 
-
-function validaIngredientes(event) {
 function validaIngredientes() {
-
-    var checks = document.childNodes.item('input')
-    var checksIngr = divIngredientes.childNodes
-
-    console.log("ingredientes", checksIngr)
-
-    if (tamaños.eCheckbox = true(preciofinal)) {
-        preciofinal = preciofinal + tamaños.value(precioTam);
-
 
     var preciofinal = 0;
     
     // Calculamos los precios de la pizza dependiendo de la que haya chekeado o marcado en el html
-    if (document.getElementById("Pequ").checked){
-        preciofinal = preciofinal + 5; // document.getElementById("Pequ").value;
+    var PizzaPeque = document.getElementById("Pequ")
+    if (PizzaPeque.checked){
+        preciofinal = preciofinal + new Number(PizzaPeque.value) 
     }
-    if (document.getElementById("Medi").checked){
-        preciofinal = preciofinal + 10; //document.getElementById("Medi").value;
+    var PizzaMediana = document.getElementById("Medi")
+    if (PizzaMediana.checked){
+        preciofinal = preciofinal + new Number(PizzaMediana.value)
     }
-    if (document.getElementById("Gran").checked){
-        preciofinal = preciofinal + 15; //document.getElementById("Gran").value;
+    var PizzaGrande = document.getElementById("Gran")
+    if (PizzaGrande.checked){
+        preciofinal = preciofinal + new Number(PizzaGrande.value)
     }
 
     //Calculamos el precio final con los ingrdientes añadidos
+    var ingrediBacon = document.getElementById("ingBaco")
+    if (ingrediBacon.checked){
+        preciofinal = preciofinal + new Number(ingrediBacon.value) 
+    }
+    var ingrediPeppe = document.getElementById("ingPepp")
+    if (ingrediPeppe.checked){
+        preciofinal = preciofinal + new Number(ingrediPeppe.value)
+    }
+    var ingrediCham = document.getElementById("ingCham")
+    if (ingrediCham.checked){
+        preciofinal = preciofinal + new Number(ingrediCham.value) 
+    }
+    var ingrediCebo = document.getElementById("ingCebo")
+    if (ingrediCebo.checked){
+        preciofinal = preciofinal + new Number(ingrediCebo.value) 
+    }
+    var ingrediPiña = document.getElementById("ingPiña")
+    if (ingrediPiña.checked){
+        preciofinal = preciofinal + new Number(ingrediPiña.value) 
+    }
+    var ingrediAcei = document.getElementById("ingAcei")
+    if (ingrediAcei.checked){
+        preciofinal = preciofinal + new Number(ingrediAcei.value) 
+    }
 
-    if (document.getElementById("ingBaco").checked){
-        preciofinal = preciofinal + 1 // document.getElementById("Pequ").value;
-    }
-    if (document.getElementById("ingPepp").checked){
-        preciofinal = preciofinal + 1 // document.getElementById("Medi").value;
-    }
-    if (document.getElementById("ingCham").checked){
-        preciofinal = preciofinal + 1 // document.getElementById("Gran").value;
-    }
-    if (document.getElementById("ingCebo").checked){
-        preciofinal = preciofinal + 1 // document.getElementById("Pequ").value;
-    }
-    if (document.getElementById("ingPiña").checked){
-        preciofinal = preciofinal + 1 // document.getElementById("Medi").value;
-    }
-
-    console.log ("El precio final del Usuario es "+ preciofinal)
-    //alert ("Su precio final es: "+ preciofinal);
+    alert("El precio final del Usuario es "+ preciofinal+ " €")
+    
+    
 }
