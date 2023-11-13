@@ -16,9 +16,9 @@ function cargarDatosJson() {
     let xmlHttp = new XMLHttpRequest() // creamos la conexión HTTP
 
     xmlHttp.open('GET', URL_DESTINO + RECURSO, true) // true lo hace Asíncrono
-    
+
     xmlHttp.send() // al ser GET puede ir sin nada o con valor NULL
-    
+
 
     xmlHttp.onload = function () { // solo salta al finalizar la respuesta del SERVER
 
@@ -114,7 +114,7 @@ function rellenarIngredientes(ingredientes) {
             eCheckbox.appendChild(txtCheckbox);
 
 
-        console.log("El id es "+ eCheckbox.id + " del ingrediente "+eCheckbox.name + " con valor "+eCheckbox.value);
+            console.log("El id es " + eCheckbox.id + " del ingrediente " + eCheckbox.name + " con valor " + eCheckbox.value);
 
 
             divIngredientes.appendChild(eCheckbox);
@@ -128,7 +128,7 @@ function asignarEventos() {
     var email = document.getElementById("email")
     var btnEnviar = document.getElementById("btnEnviar")
     var btnActualizar = document.getElementById("btnActualizar")
-    
+
     email.addEventListener("blur", validaEmail)
     btnEnviar.addEventListener("click", validaciones)
     btnActualizar.addEventListener("click", funcionRecargaDatos)
@@ -171,48 +171,73 @@ function validaEmail() {
 function validaIngredientes() {
 
     var preciofinal = 0;
-    
+    var detallePedido = [];
+
     // Calculamos los precios de la pizza dependiendo de la que haya chekeado o marcado en el html
     var PizzaPeque = document.getElementById("Pequ")
-    if (PizzaPeque.checked){
-        preciofinal = preciofinal + new Number(PizzaPeque.value) 
+    if (PizzaPeque.checked) {
+        preciofinal = preciofinal + new Number(PizzaPeque.value)
+        // console.log(PizzaPeque.value)
+        console.log('pizza peque', PizzaPeque.textContent)
+
+        detallePedido.push('Tamaño pizza: ' + PizzaPeque.textContent)
     }
     var PizzaMediana = document.getElementById("Medi")
-    if (PizzaMediana.checked){
+    if (PizzaMediana.checked) {
         preciofinal = preciofinal + new Number(PizzaMediana.value)
+        detallePedido.push('Tamaño pizza: ' + PizzaMediana.textContent)
     }
     var PizzaGrande = document.getElementById("Gran")
-    if (PizzaGrande.checked){
+    if (PizzaGrande.checked) {
         preciofinal = preciofinal + new Number(PizzaGrande.value)
+        detallePedido.push('Tamaño pizza: ' + PizzaGrande.textContent)
     }
 
     //Calculamos el precio final con los ingrdientes añadidos
     var ingrediBacon = document.getElementById("ingBaco")
-    if (ingrediBacon.checked){
-        preciofinal = preciofinal + new Number(ingrediBacon.value) 
+    if (ingrediBacon.checked) {
+        preciofinal = preciofinal + new Number(ingrediBacon.value)
+        detallePedido.push('Ingrediente seleccionado: ' + ingrediBacon.textContent)
     }
     var ingrediPeppe = document.getElementById("ingPepp")
-    if (ingrediPeppe.checked){
+    if (ingrediPeppe.checked) {
         preciofinal = preciofinal + new Number(ingrediPeppe.value)
+        detallePedido.push('Ingrediente seleccionado: ' + ingrediPeppe.textContent)
+
     }
     var ingrediCham = document.getElementById("ingCham")
-    if (ingrediCham.checked){
-        preciofinal = preciofinal + new Number(ingrediCham.value) 
+    if (ingrediCham.checked) {
+        preciofinal = preciofinal + new Number(ingrediCham.value)
+        detallePedido.push('Ingrediente seleccionado: ' + ingrediCham.textContent)
+
     }
     var ingrediCebo = document.getElementById("ingCebo")
-    if (ingrediCebo.checked){
-        preciofinal = preciofinal + new Number(ingrediCebo.value) 
+    if (ingrediCebo.checked) {
+        preciofinal = preciofinal + new Number(ingrediCebo.value)
+        detallePedido.push('Ingrediente seleccionado: ' + ingrediCebo.textContent)
+
     }
     var ingrediPiña = document.getElementById("ingPiña")
-    if (ingrediPiña.checked){
-        preciofinal = preciofinal + new Number(ingrediPiña.value) 
+    if (ingrediPiña.checked) {
+        preciofinal = preciofinal + new Number(ingrediPiña.value)
+        detallePedido.push('Ingrediente seleccionado: ' + ingrediPiña.textContent)
+
     }
     var ingrediAcei = document.getElementById("ingAcei")
-    if (ingrediAcei.checked){
-        preciofinal = preciofinal + new Number(ingrediAcei.value) 
+    if (ingrediAcei.checked) {
+        preciofinal = preciofinal + new Number(ingrediAcei.value)
+        detallePedido.push('Ingrediente seleccionado: ' + ingrediAcei.textContent)
+    }
+    for (const pedido of detallePedido) {
+
     }
 
-    alert("El precio final del Usuario es "+ preciofinal+ " €")
-    
-    
+
+    var pedido = "El precio final del Usuario es " + preciofinal + " € \n";
+
+    for (const elemento of detallePedido) {
+        pedido += `\n ${elemento} `;
+    }
+
+    alert(pedido);
 }
