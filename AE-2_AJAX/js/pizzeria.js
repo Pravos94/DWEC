@@ -44,7 +44,7 @@ function rellenarFormulario(responseText) {
 
     let ingredientes = datosPizzeria.ingredientes
 
-    rellenarIngredientes(ingredientes)
+    // rellenarIngredientes(ingredientes)
 
 }
 
@@ -52,39 +52,44 @@ function rellenarTamaños(tamañosPizza) {
 
     console.log("Json de datos de los tamaños", tamañosPizza)
 
-    let precioTam = 0
     let tamPizzaImg = 0;
 
-    for (let tamaño of tamañosPizza) {
+    for (let tamaño in tamañosPizza) {
 
-        tamPizzaImg += 32;
-        precioTam += 5
+        if (tamañosPizza.hasOwnProperty(tamaño)) {
 
-        var eCheckbox = document.createElement('input');
-        var eLabel = document.createElement('label')
-        var txtCheckbox = document.createTextNode(tamaño);
-        var txtLabel = document.createTextNode(tamaño);
+            precioTam = tamañosPizza[tamaño];
 
-        var ePizza = document.createElement('img');
-        ePizza.setAttribute('src', "../img/pizza.png")
-        ePizza.setAttribute('alt', "Icono Pizza " + tamaño)
-        ePizza.setAttribute('style', 'width:' + tamPizzaImg + 'px;height:' + tamPizzaImg + 'px')
+            console.log(`Propiedad: ${tamaño}`);
+            console.log(`Valor: ${tamañosPizza[tamaño]}`);
+
+            tamPizzaImg += 32;
+
+            var eCheckbox = document.createElement('input');
+            var eLabel = document.createElement('label')
+            var txtCheckbox = document.createTextNode(tamaño);
+            var txtLabel = document.createTextNode(tamaño);
+
+            var ePizza = document.createElement('img');
+            ePizza.setAttribute('src', "../img/pizza.png")
+            ePizza.setAttribute('alt', "Icono Pizza " + tamaño)
+            ePizza.setAttribute('style', 'width:' + tamPizzaImg + 'px;height:' + tamPizzaImg + 'px')
 
 
-        eCheckbox.setAttribute("type", "radio");
-        eCheckbox.setAttribute("name", "r1");
-        eCheckbox.setAttribute("value", precioTam);
-        eCheckbox.setAttribute("id", tamaño.length > 3 ? tamaño.substring(0, 4) : tamaño);
+            eCheckbox.setAttribute("type", "radio");
+            eCheckbox.setAttribute("name", "r1");
+            eCheckbox.setAttribute("value", precioTam);
+            eCheckbox.setAttribute("id", tamaño.length > 3 ? tamaño.substring(0, 4) : tamaño);
 
-        eLabel.appendChild(txtLabel)
-        eCheckbox.appendChild(txtCheckbox);
-        eCheckbox.required = true;
-        eCheckbox.checked = true;
+            eLabel.appendChild(txtLabel)
+            eCheckbox.appendChild(txtCheckbox);
+            eCheckbox.required = true;
+            eCheckbox.checked = true;
 
-        divTamaños.appendChild(eCheckbox);
-        divTamaños.appendChild(eLabel);
-        divTamaños.appendChild(ePizza);
-
+            divTamaños.appendChild(eCheckbox);
+            divTamaños.appendChild(eLabel);
+            divTamaños.appendChild(ePizza);
+        }
     }
 
 }
@@ -93,27 +98,29 @@ function rellenarIngredientes(ingredientes) {
 
     console.log("Json de datos de los ingredientes", ingredientes)
 
-    for (let ingr of ingredientes) {
+    for (let ingr in ingredientes) {
 
-        var eCheckbox = document.createElement('input');
-        var eLabel = document.createElement('label')
-        var txtCheckbox = document.createTextNode(ingr);
-        var txtLabel = document.createTextNode(ingr);
+        if (tamañosPizza.hasOwnProperty(ingr)) {
 
-        var SaltoLinea = document.createElement('br');
+            var eCheckbox = document.createElement('input');
+            var eLabel = document.createElement('label')
+            var txtCheckbox = document.createTextNode(ingr);
+            var txtLabel = document.createTextNode(ingr);
+
+            var SaltoLinea = document.createElement('br');
 
 
-        eCheckbox.setAttribute("type", "Checkbox");
-        eCheckbox.setAttribute("value", 1);
-        eCheckbox.setAttribute("id", ingr.length > 3 ? 'ing' + ingr.substring(0, 4) : 'ing' + ingr);
+            eCheckbox.setAttribute("type", "Checkbox");
+            eCheckbox.setAttribute("value", 1);
+            eCheckbox.setAttribute("id", ingr.length > 3 ? 'ing' + ingr.substring(0, 4) : 'ing' + ingr);
 
-        eLabel.appendChild(txtLabel)
-        eCheckbox.appendChild(txtCheckbox);
+            eLabel.appendChild(txtLabel)
+            eCheckbox.appendChild(txtCheckbox);
 
-        divIngredientes.appendChild(eCheckbox);
-        divIngredientes.appendChild(eLabel);
-        divIngredientes.appendChild(SaltoLinea);
-
+            divIngredientes.appendChild(eCheckbox);
+            divIngredientes.appendChild(eLabel);
+            divIngredientes.appendChild(SaltoLinea);
+        }
     }
 }
 
