@@ -48,11 +48,11 @@ function cargarDOM_R2(){
     var tagContent_Telef = document.createTextNode('Teléfono: ');
     var tagContent_Email = document.createTextNode('Email: ');
     var icon_Telef = document.createElement('img');
-    icon_Telef.setAttribute('src','img/llamada.png');
+    icon_Telef.setAttribute('src','../img/llamada.png');
     icon_Telef.setAttribute('alt','Icono Llamada');
 
     var icon_Casa = document.createElement('img');
-    icon_Casa.setAttribute('src','img/casa.gif');
+    icon_Casa.setAttribute('src','../img/casa.gif');
     icon_Casa.setAttribute('alt','Icono Casa');
     icon_Casa.setAttribute('style','width:16px;height:16px');
 
