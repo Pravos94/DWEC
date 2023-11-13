@@ -1,5 +1,4 @@
 
-// const URL_DESTINO = "http://localhost:5500/DWEC/AE-2_AJAX/" 
 const URL_DESTINO = "http://localhost:5500/AE-2_AJAX/"
 
 const RECURSO = "datosPizzeria.json"
@@ -14,12 +13,9 @@ function cargarDatosJson() {
     let xmlHttp = new XMLHttpRequest() // creamos la conexión HTTP
 
     xmlHttp.open('GET', URL_DESTINO + RECURSO, true) // true lo hace Asíncrono
-    try {
-        xmlHttp.send() // al ser GET puede ir sin nada o con valor NULL
-    } catch (error) {
-        console.log("mierroreseste: ", error)
-    }
-
+    
+    xmlHttp.send() // al ser GET puede ir sin nada o con valor NULL
+    
 
     xmlHttp.onload = function () { // solo salta al finalizar la respuesta del SERVER
 
@@ -77,10 +73,12 @@ function rellenarTamaños(tamañosPizza) {
         eCheckbox.appendChild(txtCheckbox);
         eCheckbox.required = true;
         eCheckbox.checked = true;
-
+            
         divTamaños.appendChild(eCheckbox);
         divTamaños.appendChild(eLabel);
         divTamaños.appendChild(ePizza);
+        
+        console.log("El id es "+ eCheckbox.id + " del ingrediente "+eCheckbox.name+ " con valor "+eCheckbox.value);
 
     }
 
@@ -111,6 +109,8 @@ function rellenarIngredientes(ingredientes) {
         divIngredientes.appendChild(eLabel);
         divIngredientes.appendChild(SaltoLinea);
 
+        console.log("El id es "+ eCheckbox.id + " del ingrediente "+eCheckbox.name + " con valor "+eCheckbox.value);
+
     }
 }
 
@@ -134,10 +134,38 @@ function validaEmail(event) {
 }
 
 function validaIngredientes(event) {
-    if (tamaños.eCheckbox = true(preciofinal)) {
-        preciofinal = preciofinal + tamaños.value(precioTam);
 
-        alert("Su pedido es: " + preciofinal)
+    var preciofinal = 0;
+    
+    // Calculamos los precios de la pizza dependiendo de la que haya chekeado o marcado en el html
+    if (document.getElementById("Pequ").checked){
+        preciofinal = preciofinal + 5; // document.getElementById("Pequ").value;
+    }
+    if (document.getElementById("Medi").checked){
+        preciofinal = preciofinal + 10; //document.getElementById("Medi").value;
+    }
+    if (document.getElementById("Gran").checked){
+        preciofinal = preciofinal + 15; //document.getElementById("Gran").value;
     }
 
+    //Calculamos el precio final con los ingrdientes añadidos
+
+    if (document.getElementById("ingBaco").checked){
+        preciofinal = preciofinal + 1 // document.getElementById("Pequ").value;
+    }
+    if (document.getElementById("ingPepp").checked){
+        preciofinal = preciofinal + 1 // document.getElementById("Medi").value;
+    }
+    if (document.getElementById("ingCham").checked){
+        preciofinal = preciofinal + 1 // document.getElementById("Gran").value;
+    }
+    if (document.getElementById("ingCebo").checked){
+        preciofinal = preciofinal + 1 // document.getElementById("Pequ").value;
+    }
+    if (document.getElementById("ingPiña").checked){
+        preciofinal = preciofinal + 1 // document.getElementById("Medi").value;
+    }
+
+    console.log ("El precio final del Usuario es "+ preciofinal)
+    //alert ("Su precio final es: "+ preciofinal);
 }
