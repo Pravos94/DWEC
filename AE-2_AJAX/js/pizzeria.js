@@ -119,8 +119,9 @@ function rellenarIngredientes(ingredientes) {
 
 function asignarEventos() {
 
-    btnEnviar.addEventListener("click", validaciones)
     email.addEventListener("blur", validaEmail)
+    btnEnviar.addEventListener("click", validaciones)
+    btnActualizar.addEventListener("click", cargarDatosJson)
 
 }
 
