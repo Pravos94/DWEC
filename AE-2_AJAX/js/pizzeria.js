@@ -77,23 +77,10 @@ function rellenarTamaños(tamañosPizza) {
             eCheckbox.setAttribute("value", precioTam);
             eCheckbox.setAttribute("id", tamaño.length > 3 ? tamaño.substring(0, 4) : tamaño);
 
-<<<<<<< HEAD
-        eLabel.appendChild(txtLabel)
-        eCheckbox.appendChild(txtCheckbox);
-        eCheckbox.required = true;
-        eCheckbox.checked = true;
-            
-        divTamaños.appendChild(eCheckbox);
-        divTamaños.appendChild(eLabel);
-        divTamaños.appendChild(ePizza);
-        
-        console.log("El id es "+ eCheckbox.id + " del ingrediente "+eCheckbox.name+ " con valor "+eCheckbox.value);
-=======
             eLabel.appendChild(txtLabel)
             eCheckbox.appendChild(txtCheckbox);
             eCheckbox.required = true;
             eCheckbox.checked = true;
->>>>>>> 355db8657a4482ca69ba129ed5a00b9297f6a399
 
             divTamaños.appendChild(eCheckbox);
             divTamaños.appendChild(eLabel);
@@ -126,15 +113,14 @@ function rellenarIngredientes(ingredientes) {
             eLabel.appendChild(txtLabel)
             eCheckbox.appendChild(txtCheckbox);
 
-<<<<<<< HEAD
+
         console.log("El id es "+ eCheckbox.id + " del ingrediente "+eCheckbox.name + " con valor "+eCheckbox.value);
 
-=======
+
             divIngredientes.appendChild(eCheckbox);
             divIngredientes.appendChild(eLabel);
             divIngredientes.appendChild(SaltoLinea);
         }
->>>>>>> 355db8657a4482ca69ba129ed5a00b9297f6a399
     }
 }
 
@@ -174,9 +160,8 @@ function validaEmail() {
     }
 }
 
-<<<<<<< HEAD
+
 function validaIngredientes(event) {
-=======
 function validaIngredientes() {
 
     var checks = document.childNodes.item('input')
@@ -186,7 +171,7 @@ function validaIngredientes() {
 
     if (tamaños.eCheckbox = true(preciofinal)) {
         preciofinal = preciofinal + tamaños.value(precioTam);
->>>>>>> 355db8657a4482ca69ba129ed5a00b9297f6a399
+
 
     var preciofinal = 0;
     
