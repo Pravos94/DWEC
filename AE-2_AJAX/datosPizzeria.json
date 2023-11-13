@@ -1,4 +1,15 @@
 {
-    "tamaños": ["Pequeña", "Mediana", "Grande"],
-    "ingredientes": ["Bacon Crispy", "Pepperoni", "Champiñón", "Cebolla", "Piña" ]
+    "tamaños": {
+        "Pequeña": 5,
+        "Mediana": 10,
+        "Grande": 15
+    },
+    "ingredientes": {
+        "Bacon Crispy": 3,
+        "Pepperoni": 1,
+        "Champiñón": 2, 
+        "Cebolla": 1, 
+        "Piña": 2, 
+        "Aceituna": 3
+    }
 }
