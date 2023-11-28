@@ -47,6 +47,7 @@ function cargarJuegos(){
     //------------------------
 
     var juego1 = document.createElement('p');
+    var ValoracionJ1 = document.createTextNode('8.7 / 10');
     var nombreJ1 = document.createTextNode('Diablo');
     var imgJ1 = document.createElement('img');
     var img2J1 = document.createElement('img');
@@ -63,8 +64,8 @@ function cargarJuegos(){
     
     
     juego1.appendChild(nombreJ1);
-    
     div1.appendChild(juego1);
+    div1.appendChild(ValoracionJ1);
     div1.appendChild(imgJ1);
     div1.appendChild(img2J1);
     fieldset.appendChild(SaltoLinea.cloneNode(true));
