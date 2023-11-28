@@ -49,27 +49,24 @@ function cargarJuegos(){
     var juego1 = document.createElement('p');
     var ValoracionJ1 = document.createTextNode('8.7 / 10');
     var nombreJ1 = document.createTextNode('Diablo');
-    var imgJ1 = document.createElement('img');
-    var img2J1 = document.createElement('img');
-
-    var tamimg = 0;
-
-    imgJ1.setAttribute('src','../img/diablo1_1.jpg');
-    imgJ1.setAttribute('src','../img/diablo1_2.jpg');
-    imgJ1.setAttribute('alt','Portada Diablo' );
-    imgJ1.setAttribute('style', 'width:' + tamimg + 'px;height:' + tamimg + 'px')
-    img2J1.setAttribute('alt','Captura Diablo');
-    img2J1.setAttribute('style', 'width:' + tamimg + 'px;height:' + tamimg + 'px')
-    imgJ1.setAttribute('id', "Img1");
+    const imgJ1 = document.createElement('img');
+    const img2J1 = document.createElement('img');
     
-    
+    imgJ1.setAttribute    ('src','/img/diablo1_1.jpg');
+    img2J1.setAttribute    ('src','/img/diablo1_2.jpg');
+    imgJ1.setAttribute    ('alt','Portada Diablo' );
+    img2J1.setAttribute   ('alt','Captura Diablo');
+    imgJ1.setAttribute    ('id', "Img1");
+    img2J1.setAttribute    ('id', "Img1_2");   
+    imgJ1.setAttribute('style', 'width:' + 240 + 'px;height:' + 240 + 'px')
+    img2J1.setAttribute('style', 'width:' + 240 + 'px;height:' + 240 + 'px')
+
+
     juego1.appendChild(nombreJ1);
     div1.appendChild(juego1);
     div1.appendChild(ValoracionJ1);
-    div1.appendChild(imgJ1);
-    div1.appendChild(img2J1);
-    fieldset.appendChild(SaltoLinea.cloneNode(true));
-    fieldset.appendChild(SaltoLinea.cloneNode(true));
+    document.body.appendChild(imgJ1);
+    document.body.appendChild(img2J1);
 
 
 
