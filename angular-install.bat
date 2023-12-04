@@ -8,11 +8,11 @@ start /wait msiexec /i nodejs_installer.msi /qn
 
 # Instalar TypeScript globalmente
 echo Instalando TypeScript...
-npm i -g typescript@4.5.4
+npm i typescript@4.5.4 --force
 
 # Instalar Angular CLI globalmente
 echo Instalando Angular CLI...
-npm i -g @angular/cli@13.1.4
+npm i @angular/cli@13.1.4 --force
 
 # Limpiar archivos temporales
 echo Limpiando archivos temporales...
