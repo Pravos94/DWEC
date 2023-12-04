@@ -102,5 +102,8 @@
       }
     }
   },
-  "defaultProject": "AE-3_Angular_v2"
+  "defaultProject": "AE-3_Angular_v2",
+  "cli": {
+    "analytics": false
+  }
 }
