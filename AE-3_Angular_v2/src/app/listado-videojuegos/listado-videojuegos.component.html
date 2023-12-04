@@ -1,0 +1,17 @@
+<div>
+  <h3> Bienvenidos a su Listado de Juegos </h3>
+
+  <div id="div1">
+    <p>
+      Lista de videojuegos:
+      <ng-container *ngFor="let juego of datosJuegos">
+        <span> {{ juego.titulo }}</span>
+        <span> {{ juego.valoracion }}</span>
+        <img src=`{{ juego.imagen }}` alt=`{{ juego.titulo }}` style="width:240px;height:240px" />
+
+      </ng-container>
+
+    </p>
+
+  </div>
+</div>
