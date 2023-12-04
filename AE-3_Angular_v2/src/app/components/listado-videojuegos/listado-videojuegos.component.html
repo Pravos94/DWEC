@@ -1,0 +1,19 @@
+<div>
+  <h3> Bienvenido a su Listado de Juegos {{nameUser}}</h3>
+
+  <div id="div1">
+    <p>
+      Lista de videojuegos Miguel:
+      <li>
+      <ng-container *ngFor="let juego of datosJuegos">
+        <ol><span> {{ juego.titulo }}</span>
+        <span> {{ juego.valoracion }} </span>
+        <img src={{juego.imagen}} alt={{juego.titulo}} style="width:240px;height:240px" />
+        <a [className]="['buttonLink']" [routerLink]="['/detalle']" [queryParams]="{juego:juego.titulo, imagen:juego.imagen, valoracion:juego.valoracion}">Ir a más detalle </a>
+      </ol>
+      </ng-container>
+    </li>
+    </p>
+
+  </div>
+</div>
